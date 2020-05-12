@@ -27,8 +27,8 @@ As you begin interviewing for jobs, you will often be expected to be able to imp
 
 ## Stretch goals
 
-- [ ] Implement all the methods in the [searching.py](src/searching/searching.py) file in the [searching](src/searching/README.md) directory.
-- [ ] Implement the `count_sort` algorithm in the [iterative_sorting](src/iterative_sorting/README.md) directory.
+- [ ] Implement all the methods in the [searching.py](src/searching/searching.py) file in the [searching](src/searching) directory.
+- [ ] Implement the `count_sort` algorithm in the [iterative_sorting](src/iterative_sorting) directory.
 
 ## Tests
 
