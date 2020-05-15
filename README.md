@@ -24,15 +24,16 @@ As you begin interviewing for jobs, you will often be expected to be able to imp
 - [ ] Read through the descriptions of the `bubble_sort` and `selection_sort` algorithms
 - [ ] Implement `bubble_sort` and `selection_sort` in [iterative_sorting.py](src/iterative_sorting/iterative_sorting.py)
 - [ ] Test your implementation by running `test_iterative.py`
+- [ ] Implement all the methods in the [searching.py](src/searching/searching.py) file in the [searching](src/searching) directory.
+- [ ] Test your implementation of the searching methods by running `test_searching.py`.
 
 ## Stretch goals
 
-- [ ] Implement all the methods in the [searching.py](src/searching/searching.py) file in the [searching](src/searching) directory.
 - [ ] Implement the `count_sort` algorithm in the [iterative_sorting](src/iterative_sorting) directory.
 
 ## Tests
 
-Make sure to test your implementations by running `test_iterative.py`. To test your stretch goals, you need to uncomment the tests for `count_sort` in `test_iterative.py` and run `test_searching.py`.
+Make sure to test your implementations by running `test_iterative.py` and `test_searching.py`. To test the stretch goal, you need to uncomment the tests for `count_sort` in `test_iterative.py`.
 
 ## FAQs
 
