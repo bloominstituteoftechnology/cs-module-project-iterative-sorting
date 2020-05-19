@@ -1,16 +1,8 @@
-def linear_search(arr, target):
-    # Your code here
-    _index = 0
-    for a in arr:
-        if target == a:
-            return _index
-        else:
-            _index += 1
+# [1, 2, 3, 4, 5, 6, 7, 9, 10]
 
-    return -1   # not found
-
-
-# Write an iterative implementation of Binary Search
+# assume arr is sorted 
+# returns the index of the target if it exists in the arr 
+# otherwise, returns -1 
 def binary_search(arr, target):
     # let's figure out the total size of the arr 
     left = 0
