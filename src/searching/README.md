@@ -28,7 +28,7 @@ A visualization comparing these two algorithms is shown below.
 ![binary v sequential](https://www.mathwarehouse.com/programming/images/binary-vs-linear-search/binary-and-linear-search-animations.gif "Binary v Sequential Search")
 
 ### Your Task 
-- (STRETCH) Complete some or all of the three functions in `searching.py`
+- Complete all of the functions in the `searching.py` file.
 
 ### Runtimes
 

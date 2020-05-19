@@ -29,7 +29,7 @@ As you begin interviewing for jobs, you will often be expected to be able to imp
 
 ## Stretch goals
 
-- [ ] Implement the `count_sort` algorithm in the [iterative_sorting](src/iterative_sorting) directory.
+- [ ] Implement the `counting_sort` [algorithm](https://en.wikipedia.org/wiki/Counting_sort) in the [iterative_sorting](src/iterative_sorting) directory.
 
 ## Tests
 
