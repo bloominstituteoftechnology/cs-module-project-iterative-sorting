@@ -33,20 +33,49 @@ def bubble_sort(arr):
 
 
 # STRETCH: implement the Count Sort function below
-def count_sort(arr, maximum=-1):
-     counts = [0] * (maximum -1)
-     for item in arr:
-         counts[item] +=1
-     num_items_before = 0 
-     for i, count in enumerate(counts):
-         counts[i] = num_items_before
-         num_items_before += count
-     sorted_arr = [None] * len(arr)
-     for item in arr:
-         sorted_arr[ counts[item]] = item
-         counts[item] -=1
+# def count_sort(arr, maximum=-1):
+#      counts = [0] * (maximum -1)
+#      for item in arr:
+#          counts[item] +=1
+#      num_items_before = 0 
+#      for i, count in enumerate(counts):
+#          counts[i] = num_items_before
+#          num_items_before += count
+#      sorted_arr = [None] * len(arr)
+#      for item in arr:
+#          sorted_arr[ counts[item]] = item
+#          counts[item] -=1
 
-     return sorted_arr
+#      return sorted_arr
+
+# requires us to know the 'max' value that we will be sorting
+# the maximum was arg was so we could specify the max value
+# the  total range of data we will be sorting sits between 0 and maximum
+def count_sort(arr, maximum=-1):
+    if len(arr) == 0:
+        return arr
+    # if maximum is not given, we'll take the max value from input array 
+    if maximum == -1:
+        maximum = max(arr)
+    # make a bunch of buckets 
+    buckets = [0 for i in range(maximum+1)]
+
+    for x in arr:
+        if x < 0:
+            return "Error, negative numbers not allowed"
+        buckets[x] += 1
+
+    # we have the counts of every value in our input array
+    # loop through our buckets, starting at the smallest index
+    j = 0
+    for i in range(len(buckets)):
+        while buckets[i] > 0:
+            arr[j] = i
+            j += 1
+            buckets[i] -= 1
+
+    return arr
+
 
 
 
