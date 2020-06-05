@@ -6,7 +6,7 @@ import numpy as np
 def selection_sort(arr):
     """
     Selection sort repeatedly finds and selects the next smallest element,
-    then inserts it in it's designated place.
+    then inserts it in its designated place.
     """
 
     # loop through n-1 elements
