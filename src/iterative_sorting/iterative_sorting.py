@@ -64,12 +64,10 @@ def count_sort(arr, maximum=None):
         if min(arr) < 0:
             return "Error, negative numbers not allowed in Count Sort"
     buckets = []
-    indexes = []
     if maximum:
         for i in range(0, maximum + 1):
             # Add 0 to buckets.
             buckets.append(0)
-            indexes.append(i)
             total = 0
 
             # Count values and add the count to buckets.
@@ -79,33 +77,16 @@ def count_sort(arr, maximum=None):
                         total += 1
             buckets[i] = total
         
-        # Selection Sort to sort the values in buckets.
-        repeat = True
-        while repeat:
-            repeat = False
-            for i in range(0, len(buckets) - 1):
-                if buckets[i + 1] < buckets[i]:
-                    # Set loop to repeat
-                    if repeat == False:
-                        repeat = True
-
-                    # Swap bucket values
-                    buckets[i] = buckets[i] + buckets[i + 1]
-                    buckets[i + 1] = buckets[i] - buckets[i + 1]
-                    buckets[i] = buckets[i] - buckets[i + 1]
-
-                    # Swap indexes
-                    if indexes[i + 1] != indexes[i]:
-                        indexes[i] = indexes[i] + indexes[i + 1]
-                        indexes[i + 1] = indexes[i] - indexes[i + 1]
-                        indexes[i] = indexes[i] - indexes[i + 1]
-
-        # Values with 0 are not in the original array. So remove them.
-        while buckets[0] == 0:
-            del indexes[0]
-            del buckets[0]
-
-        # Update the original array with the sorted array.
-        arr = indexes
+        # Use buckets to add values to the array
+        arr_index = 0
+        print(arr)
+        for i in range(len(buckets)):
+            # How many times a number appears in buckets,
+            # Add the number to the array that many times.
+            while buckets[i] > 0:
+                arr[arr_index] = i
+                arr_index += 1
+                buckets[i] -= 1
+                print(arr)
 
     return arr
