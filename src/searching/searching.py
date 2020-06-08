@@ -9,9 +9,6 @@ def linear_search(arr, target):
 # Write an iterative implementation of Binary Search
 def binary_search(arr, target):
     n = len(arr)
-    # for i in range(n):
-    #    if arr[i] == target:
-    #        return i
     low = 0
     high = n-1
     while low <= high:
