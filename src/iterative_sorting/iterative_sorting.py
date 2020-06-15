@@ -18,7 +18,7 @@ def bubble_sort(arr):
         for j in range(len(arr)-1): # loop through the array, leave off the last index (because we don't want to loop on that one)
             if arr[j] > arr[j+1]: # if the first element is bigger than the second element
                 arr[j], arr[j+1] = arr[j+1], arr[j] # then swap the elements
-    return arr
+    return arr 
 
 '''
 STRETCH: implement the Count Sort function below
