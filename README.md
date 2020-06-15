@@ -7,8 +7,16 @@
 ## Objectives
 
 - describe the differences between Linear and Binary Search algorithms
+
+  - Linear search is an algorithm that's used to find an element in a list by sequentially checking the elements of the list until finding the correct element. Binary search is an algorithm that finds the position of a target value within a sorted array
+
 - define what runtime complexity is, differentiate between various classifications and categorize the performance of an algorithm using Big O notation
+
+  - Runtime complexity is the amount of time it takes to run an algorithm. I have written the differences between runtime complexity in order from the least number of operations in relation to the number of elements to the most number of operations in realtion to elements. Constant time will always perform the same number of operations to get the job done, logarithmic time works as n increases te number of operations is not going to increase by very much. Linear time is when the number of operations that we need to perform grows in direct proportion to the increase in input size. Log linear time is when we need to look over all of the elements we have and we need to do additional work on some of the elements. Quadratic time is when performance is directly proportional to the squared size of the input data set. We use this when doing bubble sort. Finally, exponential time is when the number of nested loops increases as a function of the input size n. A good example of this is cracking a password.
+
 - distinguish when to use, classify the performance, and implement code to conduct classic iterative sorting algorithms
+
+- answered this question above
 
 ## Introduction
 
@@ -159,7 +167,7 @@ So the total space complexity for this algorithm is:
 Again, compare to the `O(1)` space complexity of the initial iterative solution.
 
 In some languages, notably
-[Lisp](https://en.wikipedia.org/wiki/Lisp_(programming_language)) and other
+[Lisp](<https://en.wikipedia.org/wiki/Lisp_(programming_language)>) and other
 [functional programming
 languages](https://en.wikipedia.org/wiki/Functional_programming), you can write
 recursive solutions with `O(1)` space complexity. These languages take advantage
