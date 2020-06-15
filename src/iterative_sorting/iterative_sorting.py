@@ -9,15 +9,15 @@ def selection_sort(arr):
         arr[cur_index], arr[smallest_index] = arr[smallest_index], arr[cur_index]
     return arr
 
-x = [4,3,2,1]
-print(selection_sort(x))
+print(selection_sort([4,3,2,1]))
 
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort(arr):
     # Your code here
     for i in range(0,len(arr) - 1):
-        if arr[i] > arr[i + 1]:
-            arr[i], arr[i + 1] = arr[i + 1] , arr[i]
+        for j in range(0,len(arr) - i -1):
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1] , arr[j]
 
     return arr
 
