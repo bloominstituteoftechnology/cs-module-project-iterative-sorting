@@ -1,11 +1,20 @@
 # TO-DO: Complete the selection_sort() function below
 def selection_sort(arr):
     # loop through n-1 elements
+
+    # SEAN'S CODE
     for i in range(0, len(arr) - 1):
+        # sorted_boundary = i
+        # smallest_index = sorted_boundary
+        # # TO-DO: find next smallest element
+        # # (hint, can do in 3 loc)
+        # for unsorted_index in range(sorted_boundary, len(arr)):
+        #     if arr[unsorted_index] < arr[smallest_index]:
+        #         smallest_index = unsorted_index
+        # arr[smallest_index], arr[sorted_boundary] = arr[sorted_boundary], arr[smallest_index]
+
+
         cur_index = i
-        # smallest_index = cur_index
-        # TO-DO: find next smallest element
-        # (hint, can do in 3 loc)
         for j in range(i+1, len(arr)):
             if arr[cur_index] > arr[j]:
                 cur_index = j
@@ -21,6 +30,24 @@ def bubble_sort(arr):
         for j in range(0, len(arr)-i-1):
             if arr[j] > arr[j+1]:
                 arr[j], arr[j+1] = arr[j+1], arr[j]
+
+    # SEAN'S CODE
+    # swaps_occured = True
+    # while swaps_occured:
+    #     swaps_occured = False
+    #     for i in range(0, len(arr)-1):
+    #         if arr[i] > arr[i+1]:
+    #             arr[i], arr[i+1] = arr[i+1], arr[i]
+    #         swaps_occured = True    
+    
+    # for i in range(0, unsorted_length - 1):
+    #     if arr[i] > arr[i+1]:
+    #         arr[i], arr[i+1] = arr[i+1], arr[i]
+    # if unsorted_length > 0:
+    #     bubble_sort(arr, unsorted_length - 1)
+
+    # arr = [4, 3, 67, 34, 29, 30, 2, 15, 6]
+    # bubble_sort(arr, len(arr))
 
     return arr
 
@@ -41,8 +68,18 @@ buckets.
 
 What is the time and space complexity of the counting sort algorithm?
 '''
-def counting_sort(arr, maximum=None):
-    # Your code here
+# def count_sort(arr, maximum=None):
+#     # Your code here
+#     k = maximum.length
+#     counter = [0] * (k + 1)
+#     for i in arr:
+#         counter[i] += 1
+#     ndx = 0
+#     for i in range(len(counter)):
+#         while 0 < counter[i]:
+#             arr[ndx] = i
+#             ndx += 1
+#             counter[i] -= 1
 
 
-    return arr
+#     return arr
