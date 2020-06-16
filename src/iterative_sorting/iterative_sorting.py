@@ -5,7 +5,7 @@
 
 2. For all indices EXCEPT the last index:
 
-    a. Loop through elements on right-hand-side 
+    a. Loop through elements on right-hand-side
     of current index and find the smallest element
 
     b. Swap the element at current index with the
@@ -45,7 +45,17 @@ def selection_sort(arr):
 
 def bubble_sort(arr):
     # Your code here
-
+    # for every element
+    # compare that element to it's right ( + 1)
+    # if it is greater, swap right to left's place
+    # until we have no more swaps
+    swapped = True
+    while swapped:
+        swapped = False
+        for i in range(len(arr) - 1):
+            if arr[i] > arr[i + 1]:
+                arr[i], arr[i + 1] = arr[i + 1], arr[i]
+                swapped = True
     return arr
 
 
