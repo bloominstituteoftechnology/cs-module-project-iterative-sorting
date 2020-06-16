@@ -19,6 +19,31 @@ def selection_sort(arr):
 
     return arr
 
+## FROM LECTURE
+# def selection_sort(arr):
+#     # loop through n-1 elements
+#     for i in range(0, len(arr) - 1):
+#         sorted_boundary = i
+#         smallest_index = sorted_boundary
+#         # TO-DO: find next smallest element
+#         # (hint, can do in 3 loc)
+#         # Your code here
+#         # iterate through the unsorted portion of the array
+#         # finding the index of the smallest element in the unsorted portion
+#         for unsorted_index in range(sorted_boundary, len(arr)):
+#             # if we find a value < smallest_index element,
+#             # update our smallest_index variable
+#             if arr[unsorted_index] < arr[smallest_index]:
+#                 smallest_index = unsorted_index
+
+# # TO-DO: swap
+# # Your code here
+# # we've found the smallest element in the unsorted portion
+# # swap it with the element right next to the boundary
+# arr[smallest_index], arr[sorted_boundary] = arr[sorted_boundary], arr[smallest_index]
+# ​
+# return arr
+
 
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort(arr):
@@ -34,6 +59,50 @@ def bubble_sort(arr):
                 swap += 1
 
     return arr
+
+## FROM LECTURE - Iterative bubble sort implementation:
+# def bubble_sort(arr):
+# 	# it traverses the array
+#     # loop until no more swaps occur
+#     swaps_occurred = True
+
+# ​
+#    while swaps_occurred:
+#         swaps_occurred = False
+# ​
+#        for i in range(0, len(arr)-1):
+#             # compare two elements
+#             if arr[i] > arr[i+1]:
+#                 # swaps them if the two elements aren't in order
+#                 arr[i], arr[i+1] = arr[i+1], arr[i]
+#                 swaps_occurred = True
+
+# 	return arr
+
+
+## FROM LECTURE - Recursive bubble sort implementation:
+# def bubble_sort(arr, unsorted_length):
+#     # find the unsorted_length
+#     # iterate through the arr
+#     # figure out, starting from the right side, how many elements
+#     # of the array are sorted
+#     # recursive implementation of bubble sort
+#     # base case
+#     # what's the length of the unsorted portion of our array?
+#     # once we get to an empty unsorted portion, then everything is sorted
+#     # how are we moving closer to our base case?
+#     for i in range(0, unsorted_length - 1):
+#         # compare two elements
+#         if arr[i] > arr[i+1]:
+#             # swaps them if the two elements aren't in order
+#             arr[i], arr[i+1] = arr[i+1], arr[i]
+
+
+# ​
+# # we've done one iteration of the swapping, check to see
+# # if there's more sorting to do
+# if unsorted_length > 0:
+#     bubble_sort(arr, unsorted_length - 1)
 
 
 """
