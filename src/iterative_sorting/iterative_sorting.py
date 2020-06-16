@@ -1,23 +1,30 @@
 # TO-DO: Complete the selection_sort() function below
 def selection_sort(arr):
     # loop through n-1 elements
-    for i in range(0, len(arr) - 1):
+    for i in range(1, len(arr)):
         cur_index = i
-        smallest_index = cur_index
-        # TO-DO: find next smallest element
-        # (hint, can do in 3 loc)
-        # Your code here
+        curr_numb = arr[i]
 
-
-        # TO-DO: swap
-        # Your code here
+        while cur_index > 0 and curr_numb < arr[cur_index - 1]:
+            # swap them 
+            arr[cur_index], arr[cur_index - 1] = arr[cur_index - 1], arr[cur_index]
+            # we need to keep track of our current books changing index
+            cur_index -= 1
 
     return arr
 
 
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort(arr):
-    # Your code here
+    length = len(arr)
+    
+    for i in range(length - 1):
+        for j in range(0, length-i-1):
+                
+                
+            if arr[j] > arr[j+1]: 
+                arr[j], arr[j+1] = arr[j+1], arr[j] 
+    
 
 
     return arr
