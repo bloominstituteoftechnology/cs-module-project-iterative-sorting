@@ -27,6 +27,8 @@ def bubble_sort(arr):
             if arr[i] > arr[i + 1]: # if the next element is larger,
                 arr[i], arr[i + 1] = arr[i + 1], arr[i] # then swap
                 did_swap = True # Make note if we did at least one swap
+        
+        pass_num += 1
 
     return arr
 
