@@ -38,36 +38,17 @@ def bubble_sort(arr):
         # iterate from 0 index to last unsorted index
         for j in range(0, len(arr) - sorted_indices):
             # if next index is less than 
-            # check if 
+            # check if item is greater than the next index item in the array
             if arr[j] > arr[j + 1]:
-            # if j + 1 < len(arr) and arr[j] > arr[j + 1]:
+                # holds the value of the next index in array that we will swap
                 temp = arr[j + 1]
+                # overwrite next index item with current 
                 arr[j + 1] = arr[j]
+                # set stored temp value as new current j index item
                 arr[j] = temp
 
     return arr
-
-some_list = [2, 6, 5, 10, 8, 4, 7, 9, 3, 1]
-x = selection_sort(some_list)
-print(f"Selection Sort 1: {x}")
-some_list = [2, 6, 5, 10, 8, 4, 7, 9, 3, 1]
-x = bubble_sort(some_list)
-print(f"Bubble Sort 1: {x}")
-some_list2 = [9, 10, 3, 4, 5, 6, 7, 8, 1, 2]
-x = selection_sort(some_list2)
-print(f"Selection Sort 2: {x}")
-some_list2 = [9, 10, 3, 4, 5, 6, 7, 8, 1, 2]
-x = bubble_sort(some_list2)
-print(f"Bubble Sort 2: {x}")
-some_list3 = [1, 2, 3, 4, 5, 6, 7, 8, 10, 9]
-x = selection_sort(some_list3)
-print(f"Selection Sort 3: {x}")
-some_list3 = [1, 2, 3, 4, 5, 6, 7, 8, 10, 9]
-x = bubble_sort(some_list3)
-print(f"Bubble Sort 3: {x}")
-some_list4 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -1]
-x = bubble_sort(some_list4)
-print(f"Bubble Sort 4: {x}")
+    
 '''
 STRETCH: implement the Count Sort function below
 
