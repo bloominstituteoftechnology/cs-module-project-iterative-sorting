@@ -21,7 +21,7 @@ def bubble_sort(arr):
     
     pass_num = 1 # Keep track of the pass number to not check the elements that have already bubbled up
 
-    while pass_num < len(arr): # I want to repeat the logic and check at the end, so use while true
+    while pass_num < len(arr): 
         did_swap = False
 
         for i in range(len(arr) - pass_num): # Loop through all the elements minus the pass number
