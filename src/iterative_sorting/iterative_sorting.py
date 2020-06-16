@@ -1,26 +1,70 @@
-# TO-DO: Complete the selection_sort() function below
 def selection_sort(arr):
-    # loop through n-1 elements
+    """
+    Selection Sort algorithm implementation
+    
+    Args:
+        arr: Array of values to sort
+
+    Returns:
+        arr: Sorted array
+
+    Examples:
+        >>> arr1 = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7]
+        >>> sorted_arr1 = selection_sort(arr1)
+        >>> print(sorted_arr1)
+        [0,1,2,3,4,5,6,7,8,9]
+    """
+
+    # For all indices EXCEPT the last index
     for i in range(0, len(arr) - 1):
+        # Start with current index = 0
         cur_index = i
         smallest_index = cur_index
-        # TO-DO: find next smallest element
-        # (hint, can do in 3 loc)
-        # Your code here
-
-
-        # TO-DO: swap
-        # Your code here
-
+        #a. Loop through elements on right-hand-side 
+        # of current index and find the smallest element
+        for j in range(i+1, len(arr)):
+            if arr[cur_index] > arr[j]:
+                cur_index = j
+        # b. Swap the element at current index with the 
+        # smallest element found in above loop
+        arr[i], arr[cur_index] = arr[cur_index], arr[i]
     return arr
 
 
-# TO-DO:  implement the Bubble Sort function below
 def bubble_sort(arr):
-    # Your code here
+    """
+    Bubble Sort algorithm implementation
+    
+    Args:
+        arr: Array of values to sort
 
+    Returns:
+        arr: Sorted array
 
+    Examples:
+        >>> arr1 = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7]
+        >>> sorted_arr1 = bubble_sort(arr1)
+        >>> print(sorted_arr1)
+        [0,1,2,3,4,5,6,7,8,9]
+    """
+
+    # Loop through your array
+    for i in range(len(arr)-1):
+        swapped = False
+        # Compare each element to its neighbor
+        for j in range(0, len(arr)-i-1):
+            # If elements in wrong position 
+            # (relative to each other, swap them)
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+                swapped = True
+        # If no swaps performed, stop. 
+        # Else, go back to the element at index 0 
+        # and repeat step 1.
+        if swapped == False:
+            break
     return arr
+
 
 '''
 STRETCH: implement the Counting Sort function below
@@ -39,8 +83,6 @@ buckets.
 
 What is the time and space complexity of the counting sort algorithm?
 '''
-def counting_sort(arr, maximum=None):
-    # Your code here
-
+def count_sort(arr, maximum=None):
 
     return arr
