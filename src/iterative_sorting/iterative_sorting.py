@@ -41,11 +41,16 @@ What is the time and space complexity of the counting sort algorithm?
 '''
 
 
-def counting_sort(arr, maximum=None):
+def count_sort(arr, maximum=None):
+    if len(arr) == 0:
+        return []
     maximum = maximum if maximum is not None else max(arr)
+
     counts = [0] * (maximum + 1)
 
     for e in arr:
+        if e < 0:
+            return "Error, negative numbers not allowed in Count Sort"
         counts[e] += 1
 
     output = []
@@ -59,5 +64,5 @@ def counting_sort(arr, maximum=None):
 
 
 test_count_sort = [4,4,9,4,1,0,3423,8,6,5,34,4,2,98,4,2,1,8,6]
-sorted_arr = counting_sort(test_count_sort)
+sorted_arr = count_sort(test_count_sort)
 print(sorted_arr)
