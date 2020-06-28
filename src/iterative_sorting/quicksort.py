@@ -19,6 +19,7 @@ def partition(data):
             right.append(x)
     print('left', left, 'pivot', pivot, 'right', right)
     return left, pivot, right
+
 def quicksort(data):
     #recursive
     #1. what is base/terminating case?
@@ -35,7 +36,7 @@ def quicksort(data):
 
 arr = [1,4,2,2,9,12,1,4,50, 32]
 
-print(quicksort(arr))
+print('quicksort',quicksort(arr))
 
 
 # instead of using partition, can make more memory efficient
