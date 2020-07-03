@@ -29,14 +29,13 @@ def quicksort(data):
     #get rid of empty left or right lists
     if len(data) == 0:
         return data
-    print(data)
     left, pivot, right = partition(data)
 
     return quicksort(left) + [pivot] + quicksort(right)
 
 arr = [1,4,2,2,9,12,1,4,50, 32]
 
-print('quicksort',quicksort(arr))
+#print('quicksort',quicksort(arr))
 
 
 # instead of using partition, can make more memory efficient
@@ -49,18 +48,18 @@ def newPartition(data, start, end):
 
     while j <= end:
         if data[j] <= pivot:
-            #swap
+            #swap, move data j to left, then check the next value next to pivot
             data[j], data[i] = data[i], data[j]
             i += 1
         j += 1
     
-    data[start], data[i-1] = data[i -1], data[start]
+    data[start], data[i - 1] = data[i - 1], data[start]
     return i - 1
 
  
 
 def quicksort2(data, start=0, end=None):
-    #get lenght of data
+    #get length of data
     if end is None:
         end = len(data) - 1
 
@@ -73,8 +72,10 @@ def quicksort2(data, start=0, end=None):
     index = newPartition(data, start, end)
 
     #quicksort everything to left of pivot
-    quicksort2(data, start, index - 1)
+    quicksort2(data, start, index - 1)  
     #quicksort everything to right of pivot
     quicksort2(data, index + 1, end)
+    #quicksort2(data, index + 1, end)
+    
 
-# print(quicksort2(arr))
+print(quicksort2(arr))

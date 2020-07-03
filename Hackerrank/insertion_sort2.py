@@ -11,18 +11,21 @@ def insertionSort2(n, arr):
             arr[position], arr[element] = arr[element], arr[position]
             position -= 1
             element -= 1
-        print(*arr)
+    return arr
 n = 6
 arr = [1, 4, 3, 5, 6, 2]
 
     
-#print(insertionSort2(n, arr))
+print(insertionSort2(n, arr))
 
 
 def insertion_sort(l):
     for i in range(1, len(l)):
         j = i-1
         current = i
+        #while do not pass beginning of array j >= 0
+        #while current is less than previous.
+        #continue to swap until not less than or beginning of array
         while (j >= 0) and (l[current] < l[j]):
            l[current], l[j] = l[j], l[current]
            j -= 1
