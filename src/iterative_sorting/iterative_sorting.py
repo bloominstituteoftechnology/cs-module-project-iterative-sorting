@@ -22,6 +22,7 @@ def selection_sort(arr):
 def bubble_sort(arr):
     # Your code here
     did_swap = True
+    # initiating did swap value to be used in loop
 
     while did_swap is True:
         did_swap = False
