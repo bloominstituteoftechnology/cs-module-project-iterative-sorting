@@ -9,8 +9,9 @@ def binary_gap(N):
     #bin make binary, do not need first two characters ob
     # binary makes a string
 
-    # write your code in Python 3.6
+    # binaryNum, do not need first two characters
     binaryNum = bin(N)[2:]
+    print(binaryNum)
     largestgap = 0
     counter = 0
     for x in binaryNum:
@@ -27,4 +28,4 @@ def binary_gap(N):
 
            
 
-print(binary_gap(32))
+print(binary_gap(352))

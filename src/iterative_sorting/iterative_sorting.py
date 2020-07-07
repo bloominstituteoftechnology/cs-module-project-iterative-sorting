@@ -13,7 +13,7 @@ def selection_sort(arr):
         arr[cur_index], arr[smallest_index] = arr[smallest_index], arr[cur_index]
     return arr
 arrS = [4,5,1,55,3,4,0,1]
-print(selection_sort(arrS))
+print('selection', selection_sort(arrS))
        
 # starts at 0 index in array, compares to all other numbers in the array.  
 # finds the smallest number and then swaps with the smallest number.

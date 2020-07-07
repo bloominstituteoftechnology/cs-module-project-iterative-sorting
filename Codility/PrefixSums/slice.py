@@ -1,4 +1,5 @@
-# A non-empty array A consisting of N integers is given. A pair of integers (P, Q), such that 0 ≤ P < Q < N, is called a slice of array A (notice that the slice contains at least two elements). The average of a slice (P, Q) is the sum of A[P] + A[P + 1] + ... + A[Q] divided by the length of the slice. To be precise, the average equals (A[P] + A[P + 1] + ... + A[Q]) / (Q − P + 1).
+# A non-empty array A consisting of N integers is given. A pair of integers (P, Q),
+#  such that 0 ≤ P < Q < N, is called a slice of array A (notice that the slice contains at least two elements). The average of a slice (P, Q) is the sum of A[P] + A[P + 1] + ... + A[Q] divided by the length of the slice. To be precise, the average equals (A[P] + A[P + 1] + ... + A[Q]) / (Q − P + 1).
 
 # For example, array A such that:
 
@@ -20,7 +21,10 @@
 
 # def solution(A)
 
-# that, given a non-empty array A consisting of N integers, returns the starting position of the slice with the minimal average. If there is more than one slice with a minimal average, you should return the smallest starting position of such a slice.
+# that, given a non-empty array A consisting of N integers, 
+# returns the starting position of the slice with the minimal average. 
+# If there is more than one slice with a minimal average, 
+# you should return the smallest starting position of such a slice.
 
 # For example, given array A such that:
 
@@ -39,15 +43,53 @@
 # each element of array A is an integer within the range [−10,000..10,000].
 
 def slice_array(A):
-    #make a new array with averages
-    smallest = (A[0] + A[1]) / 2
-    marker = 0
-    for i in range(1, len(A) - 1):
-        diff = (A[i] + A[i + 1]) / 2
-        if diff < smallest:
-            smallest = diff
-            marker = i
-    return marker
+    twoDiff = []
+    for i in range(len(A) - 1):
+        twoDiff.append((A[i]+A[i+1]) / 2)
+    threeDiff = []  
+    for i in range(len(A) - 2):
+        threeDiff.append((A[i]+A[i+1]+A[i+2]) / 3)
+    minimum = (A[0] + A[1])/2
+    place = 0
+    for i in range(0, len(twoDiff)):
+        if twoDiff[i] < minimum:
+            minimum = twoDiff[i]
+            place = i
+
+    for i in range(0, len(threeDiff)):
+        if threeDiff[i] < minimum:
+            minimum = threeDiff[i]
+            place = i
+    return place
+        
+            
+    
 
 A = [4, 2,2,5,1,5,8]
 print(slice_array(A))
+
+
+
+# smallest = (A[0] + A[1]) / 2
+#     marker = 0
+#     for i in range(1, len(A) - 1):
+#         diff = (A[i] + A[i + 1]) / 2
+#         if diff < smallest:
+#             smallest = diff
+#             marker = i
+#     return marker
+
+
+
+#make a new array with averages
+    # averageArr = [ A[0]]
+    # average = A[0]
+    # for i in range(1, len(A) - 1):
+    #     # print(average , A[i],i + 1)
+    #     average = ((average * i) + A[i] ) / (i + 1)
+    #     averageArr.append(average)
+    # smallest = min(averageArr)
+    # all = []
+    # for i in range(1, len(A)):
+    #     for j in range(i+1, len(averageArr)):
+    #         averageArr[i] * i + A[i]

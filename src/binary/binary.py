@@ -16,12 +16,12 @@ def find_value_binary(arr, value):
             return value
         elif arr[last] == value:
             return value
-    
+        # if value less than mid, make mid last
         elif arr[mid] < value:
             print('arr mid less')
             first = mid + 1
             last -= 1
-    
+        if value > make mid first
         elif arr[mid] > value:
             first = first + 1
             last = mid - 1

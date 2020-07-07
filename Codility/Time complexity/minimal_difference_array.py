@@ -47,7 +47,7 @@ def minimal_difference(A):
     minimal_diff = abs(lowArray - highArray)
     pointer = 1
     #print('low', lowArray, 'highArray', highArray, minimal_diff)
-    while pointer < len(A):
+    while pointer < len(A) - 1:
         if len(A) > 2:
             print(lowArray, A[pointer])
             lowArray = lowArray + A[pointer]
@@ -60,25 +60,7 @@ def minimal_difference(A):
         else:
             pointer += 1
 
-    # pointer = 1
-    # minimal_diff = -1
-
-    # while pointer < len(A):
-    #     lowArray = []
-    #     highArray = []
-    #     for i in range(0, len(A)):
-    #         if i < pointer:
-    #             lowArray.append(A[i])
-    #             print('Low',lowArray)
-    #         else:
-    #             highArray.append(A[i])
-    #             print('High',highArray)
-    #     diff = abs(sum(lowArray) - sum(highArray))
-    #     print(diff)
-    #     pointer += 1
-    #     if minimal_diff < 0 or diff < minimal_diff:
-    #         minimal_diff = diff
     return minimal_diff
         
-A = [3, 1]
+A = [-10, -20, -30, -40, 100]
 print(minimal_difference(A))

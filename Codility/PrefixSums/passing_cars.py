@@ -21,7 +21,8 @@
 
 # that, given a non-empty array A of N integers, returns the number of pairs of passing cars.
 
-# The function should return −1 if the number of pairs of passing cars exceeds 1,000,000,000.
+# The function should return −1 if the number of pairs of passing cars exceeds
+#  1,000,000,000.
 
 # For example, given:
 
@@ -39,13 +40,18 @@
 
 def passing_cars(A):
     count = 0
-   
+    arr = []
     #make array of 1 cars
     for i in range(len(A)):
         if A[i] == 0:
-            for j in range(i+1, len(A)):
-                if A[j] == 1:
-                    count += 1
+            count += 1
+        else:
+            #if not zero its 1
+            arr.append(count)
+    if sum(arr) > 1000000000:
+        return -1
+    else:    
+        return sum(arr)
     
     
   
@@ -68,3 +74,11 @@ print(passing_cars(A))
 #             for j in range(i+1, len(A)):
 #                 if A[j] == 1:
 #                     count += 1
+
+
+ #make array of 1 cars
+    # for i in range(len(A)):
+    #     if A[i] == 0:
+    #         for j in range(i+1, len(A)):
+    #             if A[j] == 1:
+    #                 count += 1
