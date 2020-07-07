@@ -4,17 +4,21 @@ def selection_sort(arr):
     for i in range(0, len(arr) - 1):
         cur_index = i
         smallest_index = cur_index
-        # TO-DO: find next smallest element
-        # (hint, can do in 3 loc)
-        # Your code here
+        # loops through all values and compares to find smallest.
+        # then will go to next i in array
         for j in range(cur_index, len(arr)):
             #find lowest value
             if arr[j] < arr[smallest_index]:
                 smallest_index = j
         arr[cur_index], arr[smallest_index] = arr[smallest_index], arr[cur_index]
     return arr
+arrS = [4,5,1,55,3,4,0,1]
+print('selection', selection_sort(arrS))
        
-
+# starts at 0 index in array, compares to all other numbers in the array.  
+# finds the smallest number and then swaps with the smallest number.
+# so now the smallest number is in index 0, next will take index 1 and compare to all numbers greater than index 1
+#finds the smallest number and puts at index 1 by making a swap.
 
 
 # arr1 = [1, 5, 8]
@@ -30,32 +34,40 @@ def bubble_sort(arr):
     # Your code here
 # loop through n-1 elements
     for i in range(0, len(arr)):
-        cur_index = i
-        print(cur_index)
-        smallest_index = cur_index
-        # TO-DO: find next smallest element
-        # (hint, can do in 3 loc)
-        # Your code here
-        if arr[i] < smallest_index:
-            smallest_index = arr[i]
+    #     cur_index = i
+    #    # print('cur_index', cur_index)
+    #     smallest_index = cur_index
+    #    # print('smallest_index', smallest_index)
+    #     # TO-DO: find next smallest element
+    #     # (hint, can do in 3 loc)
+    #     # Your code here
+    #     print('arr i', arr[i], 'smallest_index', smallest_index)
+    #     if arr[i] < smallest_index:
+    #         smallest_index = arr[i]
 
         # TO-DO: swap
         # Your code here
+        # this way we will not compare the first element to the first element
+        # and have a way to end the while loop 
         while i - 1 >= 0:
             #value of temp 
+            #sets temp to previous value
             temp = arr[i - 1]
             if arr[i] < temp:
+                #previous = current value
                 arr[i - 1] = arr[i]
+                #make temp current value
                 arr[i] = temp
                 i -= 1
             else:
+                # if temp, (previous value), is less.  will end while loop and, and iterate next value on for loop
                 # to end the while loop
-                i = -1
+                break
 
     return arr
-# arr1 = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7]
-# result2 = bubble_sort(arr1)
-# print(result2)
+arr1 = [1, 5, 8, 4, 29, 9, 6, 0, 3, 7, 9, 67]
+result2 = bubble_sort(arr1)
+print(result2)
 
 
 '''
@@ -83,6 +95,7 @@ def counting_sort(arr, maximum=None):
         return arr
 
     if maximum == None:
+        #set maximum to max value in array
         maximum = max(arr)
 
     #make a bunch of buckets 
@@ -109,8 +122,10 @@ def counting_sort(arr, maximum=None):
     for i in range(len(buckets)):
         #while value of the bucket is > o
         #print that index, index is already equal to value
+        # only looks for buckets > 0
         while buckets[i] > 0:
             arr[j] = i
+            # j tracks index of array
             j += 1
             buckets[i] -= 1
     print(arr)
@@ -118,4 +133,4 @@ def counting_sort(arr, maximum=None):
 
 
 arr1 = [1, 1, 19, 2,5,4]
-counting_sort(arr1)
+print(counting_sort(arr1))
