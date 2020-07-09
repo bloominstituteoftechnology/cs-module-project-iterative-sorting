@@ -1,13 +1,15 @@
 # TO-DO: Complete the selection_sort() function below
 def selection_sort(arr):
     # loop through n-1 elements
+    # -1 because when we have 1 item left we don't need to compare it and can assume it's highest
     for i in range(0, len(arr) - 1):
         cur_index = i
         smallest_index = cur_index
         # TO-DO: find next smallest element
         # (hint, can do in 3 loc)
         # Your code here
-        for j in range(cur_index+1, len(arr)):
+        for j in range(cur_index+1, len(arr)):  # one item to the right
+            # if element to right is less then we change it to min value
             if arr[j] < arr[smallest_index]:
                 smallest_index = j
 
