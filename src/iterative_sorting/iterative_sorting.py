@@ -20,7 +20,17 @@ def selection_sort(arr):
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort(arr):
     # Your code here
+    # -1 bc can't perform comparison on last element bc no number after
+    indexing_length = len(arr) - 1
+    sorted = False  # helps to break out of loop
 
+    while not sorted:
+        sorted = True
+        for i in range(0, indexing_length):
+            # value to left is greater than position to right
+            if arr[i] > arr[i+1]:
+                sorted = False
+                arr[i], arr[i+1] = arr[i+1], arr[i]  # flipping two values
     return arr
 
 
