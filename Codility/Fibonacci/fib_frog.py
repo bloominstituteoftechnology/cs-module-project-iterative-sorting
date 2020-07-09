@@ -63,24 +63,65 @@ def frog_fib(A):
     #N in len of array
     # move from -1 to N
     # what is the max frog can jump?
-    N = len(A)
+   N = len(A)
+
+    #find fib numbers
+   fib = [0] * (N + 2)
+  
+    
+   fib[1] = 1
+   limit = 0
+  
+   for i in range(2, N + 1):
+      fib[i] = fib[i - 1] + fib[i - 2]
+   fib
+   print(fib)
+   newFib = []
+   
+   #look for full jump then go backwards
+   jumpsTable = [0 for _ in range(N + 1)]
+   if N in fib:
+      return 1
+   
+   above = False
+   lowest = N
+   for x in fib:
+      all = x
+      count = 1
+      while above == False:
+         print('all', all, 'count', count)
+         for j in fib:
+            if all + j >= N:
+               count += 1
+               above = True
+               print(above)
+               break
+            else:
+               count += 1
+               all = all + j
+      if count < lowest:
+         lowest = count
+   return lowest
+     
+   
+   
 
     #fib jump lengths
   
-    if n <= 1:
-       return n
-    else:
-       return(recur_fibo(n-1) + recur_fibo(n-2))
+   #  if n <= 1:
+   #     return n
+   #  else:
+   #     return(recur_fibo(n-1) + recur_fibo(n-2))
 
-    nterms = 10
+   #  nterms = 10
 
-    # check if the number of terms is valid
-    if nterms <= 0:
-    print("Plese enter a positive integer")
-    else:
-    print("Fibonacci sequence:")
-    for i in range(nterms):
-       print(recur_fibo(i))
+   #  # check if the number of terms is valid
+   #  if nterms <= 0:
+   #  print("Plese enter a positive integer")
+   #  else:
+   #  print("Fibonacci sequence:")
+   #  for i in range(nterms):
+   #     print(recur_fibo(i))
 
 
 
