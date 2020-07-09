@@ -6,12 +6,12 @@ def sieve(n):
     sieve[0] = sieve[1] = False
     # start at 2
     i = 2
-    while(i * i <= n):
-        print('i',i)
+    while i * i <= n:
+       # print('i',i)
         if (sieve[i]):
             k = i * i
             while k <= n:
-                print('k', k)
+                #print('k', k)
                 sieve[k] = False
                 k += i
         i += 1
@@ -38,7 +38,7 @@ def arrayF(n):
     print(F)
 
 n = 20
-print(arrayF(n))
+#print(arrayF(n))
 
 def factorization(x, F):
     primeFactors = []

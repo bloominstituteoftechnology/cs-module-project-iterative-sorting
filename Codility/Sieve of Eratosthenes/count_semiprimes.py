@@ -45,6 +45,9 @@
 
 def solution(N, P, Q):
     #find primes with range
+    if N == 0 or N == 1:
+        all_zeros = [0 for _ in range(len(P))]
+        return all_zeros
     maxvalue = max(P+Q)
     sieve = [True for _ in range(maxvalue+1)]
     sieve[0] = sieve[1] = False
@@ -60,12 +63,29 @@ def solution(N, P, Q):
     for i in range(len(sieve)):
         if sieve[i] == True:
             primes.append(i)
-    semi = []
+    
+    #make arrays half of N
+    primes_half = []
     for x in primes:
-        for j in primes:
+        if x <= N/2:
+            primes_half.append(x)
+    #print(primes_half)
+    semi = []
+    for x in primes_half:
+        for j in primes_half:
             if x * j <= maxvalue:
                 semi.append(x*j)
-    print(semi)
+    
+    semi_set = list(set(semi))
+    #print(semi_set)
+    isPrime = [0 for _ in range(max(semi_set)+1)]
+    for x in semi_set:
+        isPrime[x] = 1
+    #print(isPrime)
+    results = []
+    for i in range(len(P)):
+        results.append(sum(isPrime[P[i]:Q[i]+1]))
+    return results
 
 
 
