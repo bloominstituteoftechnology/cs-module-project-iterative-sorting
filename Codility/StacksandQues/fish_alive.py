@@ -63,7 +63,7 @@ def solution(A, B):
             stack.append(B[i])
         elif len(stack) == 1 and B[i] == 0:
             stack.append(B[i])
-            oneIndex.append(i)
+           
         
         #add 1 to stack 
         elif B[i] == 1:
@@ -77,7 +77,7 @@ def solution(A, B):
             #put 0 on top of stack, then start to compare
             stack.append(B[i])
             #print('stack -2',stack[-2])
-            while stack[-2] == 1 and stack[-1] == 0:
+            while len(stack) >= 2 and stack[-2] == 1 and stack[-1] == 0:
                 if A[i] > A[oneIndex[-1]]:
                     stack.pop(-2)
                     oneIndex.pop()

@@ -1,10 +1,13 @@
-# A non-empty array A consisting of N integers is given. The consecutive elements of array A represent consecutive cars on a road.
+# A non-empty array A consisting of N integers is given.
+#  The consecutive elements of array A represent consecutive cars on a road.
 
 # Array A contains only 0s and/or 1s:
 
 # 0 represents a car traveling east,
 # 1 represents a car traveling west.
-# The goal is to count passing cars. We say that a pair of cars (P, Q), where 0 ≤ P < Q < N, is passing when P is traveling to the east and Q is traveling to the west.
+# The goal is to count passing cars. We say that a pair of cars (P, Q),
+#  where 0 ≤ P < Q < N, is passing when P is traveling to the east and Q is
+#  traveling to the west.
 
 # For example, consider array A such that:
 
@@ -39,15 +42,15 @@
 # each element of array A is an integer that can have one of the following values: 0, 1.
 
 def passing_cars(A):
-    count = 0
+    cars = 0
     arr = []
     #make array of 1 cars
     for i in range(len(A)):
         if A[i] == 0:
-            count += 1
+            cars += 1
         else:
-            #if not zero its 1
-            arr.append(count)
+            #if not zero its 1, append cars value, which is cars passing
+            arr.append(cars)
     if sum(arr) > 1000000000:
         return -1
     else:    
@@ -56,7 +59,7 @@ def passing_cars(A):
     
   
        
-    return count         
+    #return count         
         
 
     

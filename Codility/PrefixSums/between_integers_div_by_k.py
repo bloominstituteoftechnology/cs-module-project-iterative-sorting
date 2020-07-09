@@ -27,7 +27,9 @@ def divis(A, B, K):
 #print(divis(6, 11, 2))
 import math
 
-
+#find the first number that is divisable by K
+#then calculate how many remaining numbers will be divisable by k,
+#  and add that sum to the first one
 def divis1(A, B, K): 
     count = 0
     first = 0

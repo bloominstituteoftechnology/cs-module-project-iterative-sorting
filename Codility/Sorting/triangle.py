@@ -32,7 +32,7 @@
 # each element of array A is an integer within the range [−2,147,483,648..2,147,483,647].
 
 def triangle(A):
-    #sort
+    #values closest together are more likely to make a triangle
     print(A)
     #put in order
     A.sort()

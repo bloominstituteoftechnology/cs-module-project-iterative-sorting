@@ -65,21 +65,75 @@ S = 'GGGGGGGGGGGGGGGGGGGGGGGGGGGGGG'
 print(dna(S, P, Q))
 
 
+def dna1(S, P, A):
+    values = []
 
-#  values = []
+    for i in range(len(S)):
+        if S[i] == 'A':
+            values.append(1)
+        if S[i] == 'C':
+            values.append(2)
+        if S[i] == 'G':
+            values.append(3)
+        if S[i] =='T':
+            values.append(4)
+   
+    arrange = list(set(values))
+    if len(arrange) == 1:
+        only = [arrange[0] for _ in range(len(P))]
+        return only
+    
+    results= []
 
-#     for i in range(len(S)):
-#         if S[i] == 'A':
-#             values.append(1)
-#         if S[i] == 'C':
-#             values.append(2)
-#         if S[i] == 'G':
-#             values.append(3)
-#         if S[i] =='T':
-#             values.append(4)
-#     print('original',values)
-#     results= []
   
-#     for i in range(len(P)):
-#         results.append(min(values[P[i]:Q[i] + 1]))
-#     return results
+    for i in range(len(P)):
+        results.append(min(values[P[i]:Q[i] + 1]))
+    return results
+P = [2,5,0]
+Q =  [4,5,6]
+S = 'GGGGGGGGGGGGGGGGGGGGGGGGGGGGGG'
+print(dna1(S, P, Q))
+
+
+def dna1(S, P, A):
+    values = []
+    results= []
+    for i in range(len(P)):
+        results.append(min(S[P[i]:Q[i] + 1]))
+    #print(results)
+    for x in results:
+        if x == 'A':
+            values.append(1)
+        if x == 'C':
+            values.append(2)
+        if x == 'G':
+            values.append(3)
+        if x =='T':
+            values.append(4)
+    return values
+        
+
+    # for i in range(len(S)):
+    #     if S[i] == 'A':
+    #         values.append(1)
+    #     if S[i] == 'C':
+    #         values.append(2)
+    #     if S[i] == 'G':
+    #         values.append(3)
+    #     if S[i] =='T':
+    #         values.append(4)
+   
+    # arrange = list(set(values))
+    # if len(arrange) == 1:
+    #     only = [arrange[0] for _ in range(len(P))]
+    #     return only
+    
+    
+
+  
+   
+    
+P = [2,5,0]
+Q =  [4,5,6]
+S = 'GGGGGGGGGGGGGGGGGGGGGGGGGGGGGG'
+print(dna1(S, P, Q))

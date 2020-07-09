@@ -1,3 +1,4 @@
+# Tape equalibrium
 # A non-empty array A consisting of N integers is given. Array A represents numbers on a tape.
 
 # Any integer P, such that 0 < P < N, splits this tape into two non-empty parts: A[0], A[1], ..., A[P − 1] and A[P], A[P + 1], ..., A[N − 1].
@@ -41,7 +42,7 @@
 def minimal_difference(A):
     # write your code in Python 3.6
     
-    minimal_diff = -1
+    
     lowArray = A[0]
     highArray = sum(A) - A[0]
     minimal_diff = abs(lowArray - highArray)
@@ -53,6 +54,7 @@ def minimal_difference(A):
             lowArray = lowArray + A[pointer]
             highArray = highArray - A[pointer]
             diff = abs(lowArray - highArray)
+            print('minimal_diff', minimal_diff)
             if diff < minimal_diff:
                 minimal_diff = diff
             pointer += 1

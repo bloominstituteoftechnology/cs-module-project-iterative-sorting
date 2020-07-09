@@ -22,3 +22,4 @@ min can get A  max Z
         find integers divisable by K
 
 
+
