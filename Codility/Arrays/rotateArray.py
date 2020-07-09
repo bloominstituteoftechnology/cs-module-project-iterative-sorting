@@ -14,7 +14,7 @@ def solution(A, K):
     # return newArray
     if len(A) <= 1:
         return A
-    
+    #rotate 1 by 1
     while K > 0:
         newArray = [0 for _ in range(len(A))]
         for i in range(len(A)):

@@ -1,4 +1,5 @@
-# An array A consisting of N integers is given. The dominator of array A is the value that occurs in more than half of the elements of A.
+# An array A consisting of N integers is given. The dominator of array A is the value that
+#  occurs in more than half of the elements of A.
 
 # For example, consider array A such that
 
@@ -35,8 +36,9 @@ def denom(A):
     
     original = [e for e in A]
     print(original)
-    #find leader
+    #find leader, it will be in the middle of a sorted array
     A.sort()
+    print('sort',A.sort())
     denom = A[len(A)//2]
     leader_list = []
     for i in range(len(A)):
