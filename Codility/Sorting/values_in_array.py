@@ -19,9 +19,9 @@
 def solution(A):
     # write your code in Python 3.6
     #set() will only keep unique values
-    arr = set(A)
+    arr = list(set(A))
     #need to put back in a list
-    arr = list(arr)
+    
     return len(arr)
     
 

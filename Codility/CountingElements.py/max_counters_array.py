@@ -70,7 +70,7 @@ def counter(N, A):
 
 
 A = [3,4,4,6,1,4,4]
-#print(counter(5, A))
+print(counter(5, A))
 
 #66%
 # for x in A:
@@ -88,27 +88,35 @@ def solution(N, A):
     counter = [0 for _ in range(N)]    # The list to be returned
     max_counter = 0   # The used value in previous max_counter command
     current_max = 0   # The current maximum value of any counter
+    #keep track of max_counter.
+    #values added after max_counter > 0, will be 1 plus the max_counter
     for command in A:
+       
         if 1 <= command <= N:
+            print('counter[command-1]',counter[command-1])
             # increase(X) command
             if max_counter > counter[command-1]:
-                # lazy write
+                # if max counter is ahead of the counter, bring counter up to date with max
                 counter[command-1] = max_counter
+            # add additional 1
             counter[command-1] += 1
             
+            #keep track of highest counter, will use for value of max_counter
             if current_max < counter[command-1]:
                 current_max = counter[command-1]
-            print('counter',counter)
+         
         else:
             # max_counter command
             # just record the current maximum value for later write
             max_counter = current_max
-            print(max_counter)
+            #print('max_counter',max_counter)
+        print('counter',counter, 'current_max', current_max, 'max_counter', max_counter)
     for index in range(0,N):
+       
         if counter[index] < max_counter:
             # This element has never been used/updated after previous
             #     max_counter command
             counter[index] = max_counter
     return counter
 A = [3,4,4,6,1,4,4]
-print('solution', counter(5, A))
+print('solution', solution(5, A))

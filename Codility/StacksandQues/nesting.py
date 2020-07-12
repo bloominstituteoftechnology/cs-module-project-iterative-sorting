@@ -32,10 +32,6 @@ def nested(S):
         return 0
     if sList.count('(') != sList.count(')'): 
         return 0
-    if sList.count('{') != sList.count('}'): 
-        return 0
-    if sList.count('[') != sList.count(']'): 
-        return 0
     if len(sList) > 2 and sList[0] == "(" and sList[1] == ")" and sList[2] == ")":
         return 0
     return answer
@@ -85,4 +81,49 @@ def nested2(S):
 
 
 S = "{{{{"
-print(nested2(S))
+# print(nested2(S))
+
+
+def nested3(S):
+    if S == "":
+        return 1
+    sl = list(S)
+    #remove odd number list
+    if len(sl)%2 != 0:
+        return 0
+    print(sl)
+    stack = []
+    for i in range(len(sl)):
+    # check = [')', '}', ']']
+    # for i in range(len(sl)):
+    #     print('i',i)
+    #     if sl[i] in check and len(stack) == 0:
+    #         return 0
+    #     if sl[i] not in check:
+    #         stack.append(sl[i])
+    #         print(stack)
+    #     elif sl[i] == check[0] and stack[-1] == '(':
+    #         stack.pop()
+    #         print('stack', stack)
+    #     elif sl[i] == check[0] and stack[-1] != '(':
+    #         return 0
+    #     elif sl[i] == check[1] and stack[-1] == '{': 
+    #         stack.pop()
+    #         print('stack', stack)
+    #     elif sl[i] == check[1] and stack[-1] != '{':
+    #         return 0
+    #     elif sl[i] == check[2] and stack[-1] == '[':
+    #         stack.pop()
+    #     elif sl[i] == check[2] and stack[-1] != '[':
+    #         return 0
+    # if len(stack) == 0:
+    #     return 1
+    # else:
+    #     return 0
+         
+            
+
+
+
+S = "{{{{"
+print(nested3(S))

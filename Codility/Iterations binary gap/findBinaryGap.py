@@ -19,6 +19,7 @@ def binary_gap(N):
             #startcount = 1
             counter += 1
         #only count as binary gap if ends with 1
+        #if not zero its a 1, compare counter to largestgap and restart counter
         else:
             if counter > largestgap:
                 largestgap = counter

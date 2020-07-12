@@ -25,7 +25,8 @@
 
 # that, given a non-empty array A consisting of N integers and integer X, returns the earliest time when the frog can jump to the other side of the river.
 
-# If the frog is never able to jump to the other side of the river, the function should return −1.
+# If the frog is never able to jump to the other side of the river,
+#  the function should return −1.
 
 # For example, given X = 5 and array A such that:
 
@@ -98,12 +99,13 @@ A = [1,3,5,2,3,5,4]
 def frog2(X,A):
     # set counter 
     position = set()
-    #enumerate gives a built in counter
+    #complete the set, and return the index
     for i,j in enumerate(A):
         position.add(j)
         print(position)
         if len(position) == X:
             return i
+    #if cannot jump return -1
     return -1
 
 print(frog2(5,A))

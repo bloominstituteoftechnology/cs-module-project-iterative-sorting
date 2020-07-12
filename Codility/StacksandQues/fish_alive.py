@@ -68,6 +68,7 @@ def solution(A, B):
         #add 1 to stack 
         elif B[i] == 1:
             stack.append(B[i])
+            #index used later to compare size
             oneIndex.append(i)
         elif B[i] == 0 and stack[-1] == 0:
             stack.append(B[i])

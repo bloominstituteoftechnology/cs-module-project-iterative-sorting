@@ -35,5 +35,5 @@ print(solution([9,3,4,2,4, 90, 89], 5))
 
 i = 4
 length = 5
-K = 2
+K = 23
         
