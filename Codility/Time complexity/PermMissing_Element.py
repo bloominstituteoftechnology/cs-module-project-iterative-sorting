@@ -1,4 +1,5 @@
-# An array A consisting of N different integers is given. The array contains integers in the range [1..(N + 1)], which means that exactly one element is missing.
+# An array A consisting of N different integers is given.
+#  The array contains integers in the range [1..(N + 1)], which means that exactly one element is missing.
 
 # Your goal is to find that missing element.
 
@@ -21,6 +22,46 @@
 # N is an integer within the range [0..100,000];
 # the elements of A are all distinct;
 # each element of array A is an integer within the range [1..(N + 1)].
+
+def missing_integer(A):
+    
+    
+    #Edge case if empty array 
+    if len(A)  == 0:
+        missing_integer = 1
+        return missing_integer
+        
+    
+    if len(A) > 0 and 1 not in A:
+        return 1
+    elif len(A) == 1 and A[0] == 1:
+        return 2
+        
+    maxValue = max(A)
+    #Edge, missing last item
+    # set missing_inter to last item, can be overwritten below
+    missing_integer = maxValue + 1
+
+    #range of zeros from 0 to maxValue
+    values = [0 for _ in range(maxValue + 1)]
+
+
+    for x in A:
+        values[x] += 1
+    
+    # start at 1, not zero per instructions
+    #Edge if 1 is missing, return 1
+    
+
+
+    for i in range(1, len(values)):
+        if values[i] == 0:
+            missing_integer = i
+        
+    return missing_integer
+A = []
+print(missing_integer(A))
+
 
 def missing_integer(A):
     

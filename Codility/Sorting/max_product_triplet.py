@@ -43,7 +43,7 @@ def max_product(A):
      
     normal = A
     normal.sort()
-    print(normal)
+    #print(normal)
 
     
     top2_b1 = 0

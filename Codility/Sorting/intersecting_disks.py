@@ -48,16 +48,38 @@ def disks(A):
 
 
 
-
 A = [1,5,2,1,4,0]
 #print(disks(A))
+
+# def disks1(A):
+#     count = 0
+
+#     start = [i-A[i] for i in range(len(A))]
+
+#     print(start)
+#     for i in range(len(A)):
+#         dist = 
+#     #compare to other disks
+#     for i in range(len(A)):
+#         for j in range(i+1, len(A)):
+#             if (A[i] + A[j]) >= (j - i):
+#                 # print('(A[i] + A[j])', (A[i] + A[j]))
+#                 # print('(j - i)', (j - i))
+#                 count += 1
+#                 # print(count)
+#     return count
+
+
+
+# A = [1,5,2,1,4,0]
+# print(disks1(A))
 
 def disks2(A):
     low_range = []
     #start of disks
     for i in range(len(A)):
         low_range.append(i - A[i])
-    print('low_range',low_range)
+    #print('low_range',low_range)
 
     start = [0 for _ in range(max(low_range) + 1)]
     for i in range(len(low_range)):
@@ -66,14 +88,15 @@ def disks2(A):
             start[0] += 1
         else:
             start[low_range[i]] += 1
-    #print(start)
+    ##print(start)
     count = 0
     for i in range(len(A)):
         if (i - A[i]) < 0:
             s = 0
         else:
             s = (i - A[i])
-        print(sum(start[s: (i+A[i])+1]) - 1)
+        #number that start within range, minus itself
+        #print(sum(start[s: (i+A[i])+1]) - 1)
         count += (sum(start[s: (i+A[i])+1]) - 1)
     return count
     # if i in range(len(low_range)):
@@ -82,8 +105,8 @@ def disks2(A):
     # print('low_range', low_range)
     # print(low_range[1: 2])
 
-A = [1,5,2,1,4,0]
-print(disks2(A))
+A = [1, 5, 2, 1, 4, 0]
+#print(disks2(A))
 # def disks1(A):
 #     count = 0
 #     low_range = []

@@ -52,6 +52,7 @@ def permutation(A):
 
     for x in A:
         arr[x] += 1
+    #remove first 0
     arr = arr[1:]
     # can only have each value once
     if sum(arr) == maxValue and 0 not in arr:

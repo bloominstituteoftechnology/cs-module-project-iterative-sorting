@@ -60,12 +60,38 @@ def ladder(A,B):
     fib[1] = 1
     for i in range(2, limit + 2):
         fib[i] = fib[i - 1] + fib[i - 2]
-        print(fib)
+        
     for i in range(limit):
-        print(1<<B[i])
+        print(fib[A[i]+1])
         result[i] = fib[A[i]+1] % (1<<B[i])
     return result
 A = [4,4,5,5,1]
 B = [3,2,4,3,1]
 
 print(ladder(A,B))
+
+def rec(n, cache=None):
+    if n == 0:
+        return 1
+    if n < 0:
+        return 0
+    elif cache and cache[n] > 0:
+        return cache[n]
+    else:
+        if not cache:
+            cache = [0 for _ in range(n+1)]
+        #save to cache
+        cache[n] = rec(n-1) + rec(n-2)
+    
+    return cache[n]
+
+def ladder_rec(A,B):
+    arr = []
+    for i in range(len(A)):
+        arr.append(rec(A[i]) % (1<<B[i]))
+    return arr
+
+
+A = [4,4,5,5,1]
+B = [3,2,4,3,1]
+print(ladder_rec(A,B))

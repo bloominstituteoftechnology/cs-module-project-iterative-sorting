@@ -51,11 +51,12 @@ def dna(S, P, A):
         'G':3,
         'T':4
     }
-    results = []
+    results = [x for x in range(len(P))]
   
     for i in range(len(P)):
         print('S', min(S[P[i]:Q[i] + 1]) )
-        results.append(key[min(S[P[i]:Q[i] + 1])])
+        #results.append(key[min(S[P[i]:Q[i] + 1])])
+        results[i] = key[min(S[P[i]:Q[i] + 1])]
     return results
 
 
