@@ -77,6 +77,7 @@ def solution(N, P, Q):
                 semi.append(x*j)
     
     semi_set = list(set(semi))
+    print('semi',semi_set)
     #print(semi_set)
     isPrime = [0 for _ in range(max(semi_set)+1)]
     for x in semi_set:
@@ -96,3 +97,52 @@ N = 26
 P = [1,4,16]
 Q = [26,10,20]
 print(solution(N, P, Q))
+
+
+def solution1(N, P, Q):
+    #find primes with range
+    if N == 0 or N == 1:
+        all_zeros = [0 for _ in range(len(P))]
+        return all_zeros
+    maxvalue = max(P+Q)
+    sieve = [True for _ in range(maxvalue+1)]
+    sieve[0] = sieve[1] = False
+    i = 2
+    while(i*i <= maxvalue):
+        if (sieve[i]):
+            k = i * i
+            while k <= maxvalue:
+                sieve[k] = False
+                k += i
+        i += 1
+    primes = []
+    semi = []
+    for i in range(len(sieve)):
+        if sieve[i] == True and i <= N/2:
+            primes.append(i)
+            for x in primes: 
+                if x * i <= maxvalue:
+                    semi.append(x * i)
+     
+    
+    semi_set = list(set(semi))
+    #print(semi_set)
+    isPrime = [0 for _ in range(max(semi_set)+1)]
+    for x in semi_set:
+        isPrime[x] = 1
+    #print(isPrime)
+    results = []
+    for i in range(len(P)):
+        results.append(sum(isPrime[P[i]:Q[i]+1]))
+    return results
+
+
+
+
+
+
+N = 26
+P = [1,4,16]
+Q = [26,10,20]
+print(solution1(N, P, Q))
+
