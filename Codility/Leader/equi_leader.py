@@ -47,45 +47,42 @@ def equi(A):
         return 1
     if len(A) == 2 and A[0] != A[1]:
         return 0
+    if len(A) == 1:
+        return 0 
     original = [e for e in A]
     #find leader
     A.sort()
     denom = A[len(A)//2]
-    leader_list = []
-    for i in range(len(A)):
-        if original[i] == denom:
-            leader_list.append(i)
+    
         
     #if less than half of list, then it is not the Denominator
-    if len(leader_list) < len(A) / 2:
+    if A.count(denom) < len(A) / 2:
         return 0
-    print(leader_list)
+
+    if A.count(denom) == len(A):
+        return len(A) - 1
+    
+    
+    
     pointer = 0
     counter = 0
-    while len(leader_list) > 0:
-        
-        pointer = leader_list[0]
-        print('pointer',pointer)
+    while pointer <= len(original) - 1:
         left = []
         right = []
-        for i in range(len(original)):
-            if i <= pointer:
-                left.append(original[i])
-            else:
-                right.append(original[i])
-        # print('L',left, 'R', right)
+        left = original[:pointer+1]
+        right = original[pointer+1:]
+        
         #print(left.count(denom), (len(left) // 2), right.count(denom), (len(right) // 2))
         pointerArr = []
         if left.count(denom) > (len(left) // 2) and right.count(denom) > (len(right) // 2):
             pointerArr.append(pointer)
-            print('pointer array',pointerArr)
+          
             counter += 1
-            # print('counter', counter)
+            #print('counter', counter)
         #move pointer
-        leader_list.pop(0)
+        pointer += 1
     return counter
-
-A = [4, 4, 2, 5, 3, 4, 4, 4]
+A = [4, 4, 4, 4, 4]
 print(equi(A))
 
 
@@ -131,4 +128,4 @@ def equi1(A):
         pointer += 1
     return counter
 A = [4, 4, 2, 5, 3, 4, 4, 4]
-print(equi1(A))
+#print(equi1(A))

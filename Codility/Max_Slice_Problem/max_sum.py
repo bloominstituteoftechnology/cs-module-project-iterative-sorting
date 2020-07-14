@@ -30,7 +30,7 @@ def max_sum(A):
     for i in range(len(A)):
         max_slice = max(max_slice + A[i], A[i])
         arr.append(max_slice)
-    #print(arr)
+    print(arr, max_slice)
     sliceMax = max(arr)
     return sliceMax
 

@@ -44,9 +44,11 @@
 def total_non(A):
     totals = []
     maxValue = max(A)
+    #make cache
     cache = [0 for _ in range(maxValue + 1)]
     for i in range(len(A)):
         count = 0
+        #check cache for repeats
         if cache[A[i]] > 0:
             totals.append(cache[A[i]])
         else:
@@ -56,7 +58,9 @@ def total_non(A):
                 elif A[i]%j != 0:
                     count += 1
             cache[A[i]] = count
+            #print('cache',cache)
             totals.append(count)
+            #print('ttals', totals)
     return totals
         
 

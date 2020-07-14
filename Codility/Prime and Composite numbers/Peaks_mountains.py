@@ -96,7 +96,7 @@ def peak(A):
     #set flags back on mountain
     for i in range(first + 1, len(arr)):
         no = i-peaks+1
-        # print('no', no)
+        print('no', no)
         # print('no arr', arr[no: i])
         # print('i', i)
         if arr[i] == 1 and i > no and sum(arr[no: i]) == 0:
@@ -113,6 +113,8 @@ def peak(A):
     
     # return sum(arr)
         
+
+
                     
 
 
@@ -120,8 +122,82 @@ def peak(A):
 
 
 A = [1,5,3,4,3,4,1,2,3,4,6,2]
-print(peak(A))
+#print(peak(A))
 
+
+def peak1(A):
+    if len(A) == 0:
+        return 0
+    #find peaks, and where
+    arr = [0 for _ in range(len(A))]
+    print(sum(arr))
+    
+
+    for i in range(1, len(A)-1):
+        if A[i] > A[i-1] and A[i] > A[i+1]:
+            arr[i] = 1
+    peaks = sum(arr)
+    
+    if sum(arr) == 1:
+        return 1
+    if sum(arr) < 1:
+        return 0
+    
+    
+    print('arr', arr)
+    p1 = 0
+    p2 = len(arr)-1
+    flags=0
+    while p1 < p2:
+        print(arr[p1], p1, arr[p2], p2)
+        if arr[p1] == 1 and arr[p2] == 1 and p2-p1 >= peaks:
+            flags += 2
+            p1 += flags
+            p2 -= flags
+        elif arr[p1] == 1 and arr[p2] == 1 and p2-p1 < peaks:
+            flags += 1
+            break
+        elif arr[p1] == 1 and arr[p2] == 0:
+            p2 -= 1
+        elif arr[p1] == 0 and arr[p2] == 1:
+            p1 += 1
+        elif arr[p1] == 0 and arr[p2] == 0:
+            p1 += 1
+            p2 -= 1
+    return flags 
+
+        
+        
+    # while first == -1:
+    #     for i in range(len(arr)):
+           
+    #         if arr[i] == 1:
+                
+    #             first = i
+    #             break
+    
+    # newM = [0 for _ in range(len(A))]
+    # newM[first] = 1
+    
+    
+    # #set flags back on mountain
+    # for i in range(first + 1, len(arr)):
+    #     no = i-peaks+1
+        
+    #     # print('no arr', arr[no: i])
+    #     # print('i', i)
+    #     if arr[i] == 1 and i > no and sum(arr[no: i]) == 0:
+    #         print('put flag')
+    #         print('newM i', i)
+    #         newM[i] = 1
+    #         print(newM)
+    #     elif arr[i] == 1 and sum(arr[no: i]) > 0:
+    #         arr[i] = 0
+           
+
+    # return sum(newM)
+A = [1, 5]
+print(peak1(A))
 
 # arr = [0 for _ in range(len(A))]
 

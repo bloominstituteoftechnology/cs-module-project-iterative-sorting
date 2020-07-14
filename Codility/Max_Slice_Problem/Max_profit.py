@@ -46,14 +46,14 @@ def profit(A):
         return 0
     
     for i in range(1,len(A)):
-        # print(A[i], A[i-1])
+        # profit from today
         daily = A[i] - A[i-1]
-        # print('daily',daily)
+        # previous max profits, plus today's profit
         max_profit += daily
-        # print('max_profit', max_profit)
+        # take the larger of the two
         max_profit = max(max_profit, daily )
         arr.append(max_profit)
-    
+    #do not need arr, max_profit tracks highest profit
     max_return = max(arr)
     
     if len(A) == 2:
@@ -64,5 +64,5 @@ def profit(A):
     return max_return
 
 
-A = [23171, 21011, 21123, 21366, 21013 ,21367]
+A = [23171, 21011, 21123, 21366, 21013 ,21367, 21000, 19000]
 print(profit(A))
