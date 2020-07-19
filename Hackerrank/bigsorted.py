@@ -2,7 +2,7 @@ def bigSorting(unsorted):
     # arr = []
     # for x in unsorted:
     #     arr.append(int(x))
-    # result = sorted(arr)
+    # result = sorted(arr) 
     # return result
     unsorted.sort(key=int)
     for s in unsorted:
