@@ -2,18 +2,23 @@
 def selection_sort(arr):
     # loop through n-1 elements
 
+    # run an outerloop
     for i in range(len(arr)):
 
+        # set current index to i
         cur_index = i
 
+        # run an inner loop from i + 1 which mean value next to i on the right
         for j in range(i + 1, len(arr)):
 
+            # if next value less than current value
             if arr[j] < arr[cur_index]:
-
+                # then we set current index to j
                 cur_index = j
 
         if cur_index != i:
-
+            # if current index different than i
+            # swap the value and continue the loop until the inner if statement is false
             arr[i], arr[cur_index] = arr[cur_index], arr[i]
 
     return arr
@@ -22,8 +27,10 @@ def selection_sort(arr):
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort(arr):
 
+    # get last index of the list
     indexing_length = len(arr) - 1
 
+    # create a variable called sorted
     sorted = False
 
     while sorted is False:
@@ -32,11 +39,18 @@ def bubble_sort(arr):
 
         for i in range(0, indexing_length):
 
+            # compare current value to the next value
             if arr[i] > arr[i + 1]:
+
+                # if current value > next value we will swap them and set sorted = False
+
+                # if current value < next value we don't swap or set sorted, hence sorted remain True
+
+                # and we break out of the loop
+                arr[i], arr[i + 1] = arr[i + 1], arr[i]
 
                 sorted = False
 
-                arr[i], arr[i + 1] = arr[i + 1], arr[i]
 
     return arr
 
