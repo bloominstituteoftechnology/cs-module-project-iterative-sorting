@@ -24,8 +24,27 @@ def selection_sort(arr):
 
 
 # TO-DO:  implement the Bubble Sort function below
+
 def bubble_sort(arr):
+    """
+    Loop through your array
+    Compare each element to its neighbor
+    If elements in wrong position (relative to each other, swap them)
+    If no swaps performed, stop. Else, go back to the element at index 0 
+    and repeat step 1.
+    """
     # Your code here
+    # loop through elements
+    for i in range(len(arr)):
+        cur_index = i
+        cur_value = arr[i]
+        neighbor = arr[i+1]
+        for neighbor_index in range(cur_index, len(arr)):
+            # if elems in wrong pos (rel to e/o), swap them
+            if cur_value > neighbor:
+                arr[cur_index], arr[neighbor_index] = arr[neighbor_index], arr[cur_index]
+                # cur_value = arr[neighbor_index]
+                # cur_index = neighbor_index
 
 
     return arr
@@ -57,3 +76,6 @@ def counting_sort(arr, maximum=None):
 if __name__ == "__main__":
     arr = [5, 55, 6, 67, 16, 9, 25, 43, 12]
     print(selection_sort(arr))
+
+    print("---" * 10)
+    print(bubble_sort(arr))
