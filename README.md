@@ -1,23 +1,5 @@
 # Module Project - Iterative Sorting
 
-## Algorithms
-
-## Iterative Sorting
-
-## Objectives
-
-- describe the differences between Linear and Binary Search algorithms
-- define what runtime complexity is, differentiate between various classifications and categorize the performance of an algorithm using Big O notation
-- distinguish when to use, classify the performance, and implement code to conduct classic iterative sorting algorithms
-
-## Introduction
-
-In this project, you will be implementing many different solutions to the same problem: sort a list of integers in ascending order. You will also be using your newfound knowledge of complexity analysis to evaluate each implementation for efficiency.
-
-Although sorting may seem like a trivial task, this project allows you to begin practicing classifying and categorizing the performance of different algorithms. Practicing your ability to classify the performance of these simple algorithms will make it easier for you to classify more sophisticated algorithms as you continue your journey of mastering Computer Science fundamentals. It will also help you to see that even trivial computation tasks embedded in your programs are essential for you to understand. Understanding these details is part of what will make you an excellent programmer and developer.
-
-As you begin interviewing for jobs, you will often be expected to be able to implement, classify, and deeply understand these classic sorting algorithms.
-
 ## Instructions and/or completion requirements
 
 - [ ] Open up the [iterative_sorting](src/iterative_sorting) directory
