@@ -2,9 +2,9 @@
 
 ## Algorithms
 
-## Iterative Sorting
+## Iterative Sorting 
 
-## Objectives
+## Objectives 
 
 - describe the differences between Linear and Binary Search algorithms
 - define what runtime complexity is, differentiate between various classifications and categorize the performance of an algorithm using Big O notation
