@@ -34,18 +34,26 @@ def bubble_sort(arr):
     and repeat step 1.
     """
     # Your code here
-    # loop through elements
-    for i in range(len(arr)):
-        cur_index = i
-        cur_value = arr[i]
-        neighbor = arr[i+1]
-        for neighbor_index in range(cur_index, len(arr)):
-            # if elems in wrong pos (rel to e/o), swap them
-            if cur_value > neighbor:
-                arr[cur_index], arr[neighbor_index] = arr[neighbor_index], arr[cur_index]
-                # cur_value = arr[neighbor_index]
-                # cur_index = neighbor_index
+    # # loop through elements
+    # for i in range(len(arr) -1):
+    #     cur_index = i
+    #     counter = 0
+    #     # for neighbor_index in range(cur_index, len(arr)):
+    #     while counter < (len(arr) -1):  
+    #         # if elems in wrong pos (rel to e/o), swap them
+    #         if arr[counter] > arr[counter + 1]:
+    #             arr[cur_index], arr[i+1] = arr[i+1], arr[cur_index]
+    #         # breakpoint()
+    #         counter += 1
 
+    for n in range(0, len(arr)-1):
+        x = 0
+        while x < (len(arr)-1):     
+            if arr[x+1] < arr[x]:
+                temp = arr[x]
+                arr[x] = arr[x+1]
+                arr[x+1] = temp
+            x+=1
 
     return arr
 
@@ -75,7 +83,10 @@ def counting_sort(arr, maximum=None):
 
 if __name__ == "__main__":
     arr = [5, 55, 6, 67, 16, 9, 25, 43, 12]
-    print(selection_sort(arr))
+    # print(selection_sort(arr))
 
     print("---" * 10)
     print(bubble_sort(arr))
+
+    arr1 = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7]
+    # breakpoint()
