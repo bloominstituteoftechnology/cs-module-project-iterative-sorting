@@ -22,3 +22,19 @@ def insertion_sort(input_list):
     return input_list
 
 print(insertion_sort([9,8,7,6,5,4,3,2,1]))
+
+
+def insertion_sort_2(input_list):
+    for i, current in enumerate(input_list[1:]):
+        
+        j = i + 1
+        while j > 0 and current < input_list[j-1]:
+            input_list[j] = input_list[j-1]
+            j -= 1
+
+        input_list[j] = current
+
+    return input_list
+
+print(insertion_sort_2([9,8,7,6,5,4,3,2,1]))
+            
