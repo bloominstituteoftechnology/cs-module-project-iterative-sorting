@@ -1,16 +1,35 @@
 # TO-DO: Complete the selection_sort() function below
 def selection_sort(arr):
     # loop through n-1 elements
+    #print(arr)
     for i in range(0, len(arr) - 1):
         cur_index = i
         smallest_index = cur_index
         # TO-DO: find next smallest element
         # (hint, can do in 3 loc)
         # Your code here
-
+        j = i
+        #print(f'i:{i}')
+        #print(f'len array {len(arr)}')
+        while j < (len(arr)):
+            #print(cur_index+j)
+            if arr[j] < arr[smallest_index]:
+                smallest_index = j
+                #print(f'next smallest number: {arr[smallest_index]}')
+            #print(f'current j{j}')
+            j += 1
+            #print(f'new j{j}')
 
         # TO-DO: swap
         # Your code here
+        #swap the smallest card with whatever is at index 0
+        temp = arr[cur_index]
+        arr[cur_index] = arr[smallest_index]
+        arr[smallest_index] = temp
+        #print(arr)
+
+
+
 
     return arr
 
@@ -18,6 +37,30 @@ def selection_sort(arr):
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort(arr):
     # Your code here
+
+    #print(arr)
+    #print("--------")
+
+
+    ## compare first index with neighbor to right
+    ## if the neigbor on the right is less than the left, swap them
+    for number in range(0, len(arr)-1):
+        i = 0
+        while i < (len(arr)-1):     
+            if arr[i+1] < arr[i]:
+                temp = arr[i]
+                arr[i] = arr[i+1]
+                arr[i+1] = temp
+            i+=1
+            #print(i)
+    
+    ## otherwise do nothing
+    
+    #print(arr)
+    #after this pass, the farthest right value should be the largest
+
+    #if at least one swap was done:
+    #repeat this process
 
 
     return arr

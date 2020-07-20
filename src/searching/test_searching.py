@@ -22,5 +22,11 @@ class SearchingTests(unittest.TestCase):
         self.assertEqual(binary_search(arr2, 0), -1)
 
 
+        ## making my own tests for edge cases
+        self.assertEqual(binary_search(arr1, -9), 0)
+        
+
+
+
 if __name__ == '__main__':
     unittest.main()
