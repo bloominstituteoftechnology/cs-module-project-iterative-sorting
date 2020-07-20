@@ -1,17 +1,25 @@
 # TO-DO: Complete the selection_sort() function below
 def selection_sort(arr):
     # loop through n-1 elements
-    for i in range(0, len(arr) - 1):
+    for i in range(0, len(arr)):
         cur_index = i
         smallest_index = cur_index
+        smallest_value = arr[cur_index]
         # TO-DO: find next smallest element
         # (hint, can do in 3 loc)
         # Your code here
-
+        for unsorted_index in range(cur_index, len(arr)):
+            if arr[unsorted_index] < smallest_value:
+                smallest_value = arr[unsorted_index]
+                smallest_index = unsorted_index
 
         # TO-DO: swap
         # Your code here
 
+        # once found, swap with elem on the right edge of
+        # sorted-unsorted boundary
+        arr[cur_index], arr[smallest_index] = arr[smallest_index], arr[cur_index]
+        
     return arr
 
 
@@ -44,3 +52,8 @@ def counting_sort(arr, maximum=None):
 
 
     return arr
+
+
+if __name__ == "__main__":
+    arr = [5, 55, 6, 67, 16, 9, 25, 43, 12]
+    print(selection_sort(arr))
