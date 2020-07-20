@@ -5,7 +5,8 @@
 # The size of the block is any integer between 0 and N.
 #  Every element of the array should belong to some block.
 
-# The sum of the block from X to Y equals A[X] + A[X + 1] + ... + A[Y]. The sum of empty block equals 0.
+# The sum of the block from X to Y equals A[X] + A[X + 1] + ... + A[Y]. 
+# The sum of empty block equals 0.
 
 # The large sum is the maximal sum of any block.
 
@@ -30,7 +31,8 @@
 
 # class Solution { public int solution(int K, int M, int[] A); }
 
-# that, given integers K, M and a non-empty array A consisting of N integers, returns the minimal large sum.
+# that, given integers K, M and a non-empty array A consisting of N integers, 
+# returns the minimal large sum.
 
 # For example, given K = 3, M = 5 and array A such that:
 
