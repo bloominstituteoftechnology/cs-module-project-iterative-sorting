@@ -11,6 +11,7 @@ def selection_sort(arr):
             if arr[j] < arr[smallest_index]:
                 smallest_index = j
         arr[cur_index], arr[smallest_index] = arr[smallest_index], arr[cur_index]
+        print('arr',arr)
     return arr
 arrS = [4,5,1,55,3,4,0,1]
 print('selection', selection_sort(arrS))
