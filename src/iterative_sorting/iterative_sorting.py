@@ -8,6 +8,18 @@ def selection_sort(arr):
         # (hint, can do in 3 loc)
         # Your code here
 
+        # while arr[cur_index] < arr[smallest_index-1]:
+        #     # as we are "looking left", we need to
+        #     # shift items to the right
+        #     arr[smallest_index] = input_list[smallest_index+1]
+        #     smallest_index += 1
+
+        for j in range(cur_index + 1, len(arr)):
+            if arr[j] < arr[smallest_index]:
+                smallest_index = j
+
+        arr[smallest_index], arr[cur_index] = arr[cur_index], arr[smallest_index]
+
 
         # TO-DO: swap
         # Your code here
@@ -19,6 +31,22 @@ def selection_sort(arr):
 def bubble_sort(arr):
     # Your code here
 
+    for i in range(1, len(arr)): 
+        current = arr[i]
+        j = i
+        while j > 0 and current < arr[j-1]:
+            # as we are "looking left", we need to
+            # shift items to the right
+            arr[j] = arr[j-1]
+            j -= 1
+
+        # when we've found our insertion point (j)
+        # insert item
+        arr[j] = current
+
+    # for i in arr:
+    #     if i is not 0 and arr[i-1] > arr[i]:
+    #         arr[i-1], arr[i] = arr[i], arr[i-1] 
 
     return arr
 
