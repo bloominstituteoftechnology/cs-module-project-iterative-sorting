@@ -65,15 +65,15 @@ What is the time and space complexity of the counting sort algorithm?
 def counting_sort(arr, maximum=None):
     # Your code here
     count = []
-    final = []
-    for i in range(1, maximum):
+    for i in range(1, maximum + 1):
         count.append(arr.count(i))
     def multi_append(arr, val, times):
         while times > 0:
             arr.append(val)
             time -= 1
+    arr = []
     for j in count:
-        multi_append(final, j + 1, count[j])
+        multi_append(arr, j + 1, count[j])
 
 
 
