@@ -9,7 +9,7 @@ for x in a:
 b = [
     "five",
     "twenty six",
-    "nine hundred ninety nine,
+    "nine hundred ninety nine",
     "twelve",
     "eighteen",
     "one hundred one",
@@ -28,3 +28,23 @@ b = [
 # eighteen
 # six
 # twelve
+
+c = {
+    "five": 5,
+    "twenty six": 26,
+    "nine hundred ninety nine": 999,
+    "twelve": 12,
+    "eighteen": "18",
+    "one hundred one": 101,
+    "fifty two": 52,
+    "forty one": 41,
+    "seventy seven": 77,
+    "six": 6,
+    "twelve": 12,
+    "four": 4,
+    "sixteen": 16
+}
+
+for key, value in c.items():
+    if int(value) % 3 == 0:
+        print(key)
