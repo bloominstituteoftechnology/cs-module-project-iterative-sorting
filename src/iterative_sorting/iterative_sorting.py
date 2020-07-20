@@ -64,19 +64,19 @@ What is the time and space complexity of the counting sort algorithm?
 '''
 def counting_sort(arr, maximum=None):
     # Your code here
-    count = []
-    for i in range(1, maximum + 1):
-        count.append(arr.count(i))
-    def multi_append(arr, val, times):
-        while times > 0:
-            arr.append(val)
-            time -= 1
+
+    counts = {}
+    for n in arr:
+        if n not in counts:
+            counts[n] = 0
+        counts[n] += 1
     arr = []
-    for j in count:
-        multi_append(arr, j + 1, count[j])
-
-
-
+    count_items = counts.items()
+    for key, value in count_items:
+        for i in range(0, value):
+            arr.append(key)
+    
 
     return arr
+
 
