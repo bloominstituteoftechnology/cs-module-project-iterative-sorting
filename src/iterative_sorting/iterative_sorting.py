@@ -7,20 +7,42 @@ def selection_sort(arr):
         # TO-DO: find next smallest element
         # (hint, can do in 3 loc)
         # Your code here
-
+        for j in range(i + 1, len(arr)):
+            if arr[j] < arr[smallest_index]:
+                smallest_index = j
 
         # TO-DO: swap
         # Your code here
+        arr[i], arr[smallest_index] = arr[smallest_index], arr[i]
 
     return arr
 
 
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort(arr):
-    # Your code here
+    # while loop on flag
+    sorting = True
+    # track how many items have been sorted
+    sorted = -1
+    # recursive loop until nothing left to sort
+    while sorting:
+        # while loop off flag - ends the recursion when sorting is no longer true
+        sorting = False
+        # increments sorted each time it runs
+        sorted += 1
+        # index 0 is presumed sorted as it becomes our first compare / swap
+        # so our loop starts at index 1
+        # -sorted to not loop through what has already been sorted
+        for i in range(1, len(arr)-sorted):
+            # when a smaller value is found
+            if arr[i] < arr[i - 1]:
+                sorting = True
+                # swap
+                arr[i], arr[i - 1] = arr[i - 1], arr[i]
 
-
+    # end of loop return
     return arr
+
 
 '''
 STRETCH: implement the Counting Sort function below
@@ -39,8 +61,9 @@ buckets.
 
 What is the time and space complexity of the counting sort algorithm?
 '''
+
+
 def counting_sort(arr, maximum=None):
     # Your code here
-
 
     return arr
