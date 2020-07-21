@@ -1,15 +1,15 @@
 def selection_sort(arr):
-    for index in range(len(arr)):
+    for index in range(len(arr) - 1):
         lowest = index #default to current index
         
-        for index2 in range(index + 1, len(arr)): #check out everything after this index
+        for index2 in range(index, len(arr)): #check out everything after this index
             if arr[index2] < arr[lowest]: #anything lower?
-                lowest = index2
-                
-        if index is not lowest:
-            arr[index], arr[lowest] = arr[lowest], arr[index] #swap current with lowest
+                lowest = index2    
+        arr[index], arr[lowest] = arr[lowest], arr[index] #swap current with lowest
             
-        return arr
+    return arr
+        
+print(selection_sort([4, 2, 5, 10]))
         
 def bubble_sort(arr):
     isFinished = False

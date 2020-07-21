@@ -11,7 +11,7 @@ def binary_search(arr, target):
         return -1
     #gaurd for value out of range
     if target < arr[0] or target > arr[len(arr)-1]:
-        isFinished = True
+#        isFinished = True
         return -1
         
     isFinished = False
@@ -19,7 +19,7 @@ def binary_search(arr, target):
     
     while isFinished is False:
                             
-        minIndex = 0
+#        minIndex = 0
         maxIndex = len(slice) - 1
         midIndex = int(maxIndex / 2)
         midValue = slice[midIndex]
@@ -33,8 +33,8 @@ def binary_search(arr, target):
             continue
             
         if target is midValue: #found it!
-            isFinished = True
+#            isFinished = True
             return arr.index(target)
         else: #doesn't exist
-            isFinished = True
+#            isFinished = True
             return -1 
