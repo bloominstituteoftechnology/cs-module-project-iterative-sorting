@@ -17,15 +17,15 @@ def selection_sort(arr):
 
     return arr
 
-printThis = selection_sort([12,5,10,13,1,7,93,15])
-print(printThis)
+# printThis = selection_sort([12,5,10,13,1,7,93,15])
+# print(printThis)
 
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort(arr):
     # Your code here
     for t in range(len(arr)):
         for e in range(0, len(arr)-t-1):
-            if arr[e]> arr[e+1]:`
+            if arr[e]> arr[e+1]:
                 arr[e], arr[e+1] = arr[e+1], arr[e]
 
     return arr
