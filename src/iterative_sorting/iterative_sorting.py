@@ -18,6 +18,9 @@ def insertion_sort(array):
 
 
 def selection_sort(array):
+    """
+    Sort the input array using the selection sort algorithm.
+    """
     # Search all unsorted elements and find the lowest value:
     for i in range(0, len(array) - 1):
         current_index = i
@@ -35,11 +38,23 @@ def selection_sort(array):
 
 
 # TO-DO:  implement the Bubble Sort function below
-def bubble_sort(arr):
-    # Your code here
-
-
-    return arr
+def bubble_sort(array):
+    """
+    Sort the input array using the bubble sort algorithm.
+    """
+    swaps_performed = 1
+    while swaps_performed > 0:
+        # Reset number of swaps performed in this pass-through to zero:
+        swaps_performed = 0
+        # For each pair of adjacent elements in the array:
+        for i in range(len(array) - 1):
+            # If the value at the next index (i + 1) is greater than the 
+            # value at the current index, swap the two values:
+            if array[i] > array[i + 1]:
+                array[i], array[i + 1] = array[i + 1], array[i]
+                swaps_performed += 1
+    # Return sorted array:
+    return array
 
 '''
 STRETCH: implement the Counting Sort function below
