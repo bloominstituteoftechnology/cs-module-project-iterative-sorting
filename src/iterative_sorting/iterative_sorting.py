@@ -20,13 +20,13 @@ def selection_sort(arr):
 
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort(arr):
-    # while loop on flag
+    # setting a variable to track if looping continues
     sorting = True
-    # track how many items have been sorted
+    # tracks how many items have been sorted
     sorted = -1
-    # recursive loop until nothing left to sort
+    # loop until nothing left to sort
     while sorting:
-        # while loop off flag - ends the recursion when sorting is no longer true
+        # ends the loop when sorting is no longer true
         sorting = False
         # increments sorted each time it runs
         sorted += 1
