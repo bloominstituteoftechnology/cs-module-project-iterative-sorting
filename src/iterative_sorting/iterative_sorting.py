@@ -34,8 +34,31 @@ buckets.
 
 What is the time and space complexity of the counting sort algorithm?
 '''
+# Time Complexity: O(n + maximum), which simplifies to O(n)
+# Space Complexity: O(n + maximum), which simplifies to O(n)
 def counting_sort(arr, maximum=None):
-    # Your code here
+    if len(arr) < 2:
+        return arr
+    
+    if maximum is None:
+        # Time Complexity: O(n)
+        maximum = max(arr)
+    
+    # Time Complexity: O(maximum)
+    # Space Complexity: O(maximum)
+    buckets = [0] * (maximum + 1)
 
+    # Time Complexity: O(n)
+    for elem in arr:
+        if elem < 0:
+            return "Error, negative numbers not allowed in Count Sort"
+        buckets[elem] += 1
+    
+    i = 0
+    # Time Complexity: O(n + maximum)
+    for bucket_index in range(maximum + 1):
+        for _ in range(buckets[bucket_index]):
+            arr[i] = bucket_index
+            i += 1
 
     return arr
