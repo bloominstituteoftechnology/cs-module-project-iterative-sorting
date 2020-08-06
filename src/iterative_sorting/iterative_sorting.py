@@ -1,27 +1,41 @@
 # TO-DO: Complete the selection_sort() function below
+
+
+
+ 
+
 def selection_sort(arr):
-    # loop through n-1 elements
-    for i in range(0, len(arr) - 1):
-        cur_index = i
-        smallest_index = cur_index
-        # TO-DO: find next smallest element
-        # (hint, can do in 3 loc)
-        # Your code here
-
-
-        # TO-DO: swap
-        # Your code here
-
+    for start in range(len(arr)):
+        min = start
+        
+        for i in range(start, len(arr)):
+            if arr[i]< arr[min]:
+                min = i
+                
+        arr[start], arr[min] = arr[min] , arr[start]     
     return arr
 
 
+            
+# nums = [8,22,33,44,99,1]
+
+nums2 = [108,64,68,23,33]
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort(arr):
     # Your code here
-
+    for i in range(0,len(arr)-1):
+        
+         for x in range(0,len(arr)-i-1):
+             if arr[x]>arr[x+1]:
+                 arr[x], arr[x+1]= arr[x+1], arr[x]
+        
+        
 
     return arr
 
+
+print(bubble_sort(nums2))
+# print(selection_sort(nums))
 '''
 STRETCH: implement the Counting Sort function below
 
@@ -44,3 +58,23 @@ def counting_sort(arr, maximum=None):
 
 
     return arr
+
+def insert_sort(nums):
+    #loop through nums
+    #list element is a sorted list of 1
+    for i in range(1, len(nums)):
+        temp = nums[i]
+        j = i
+        
+        while j>0 and temp < nums[j-1]:
+            nums[j] = nums[j-1]
+            j-=1
+        nums[j] = temp   
+    return nums    
+    #inserting other elements into sorted sublist
+    # shile n > LHS OR CURRENT INDEX IS  NOT 0
+    #Swap
+nums = [88,22,44,33]    
+ 
+insert_sort(nums)
+print("NEW",nums)
