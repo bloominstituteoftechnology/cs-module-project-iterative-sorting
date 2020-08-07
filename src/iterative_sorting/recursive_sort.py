@@ -6,5 +6,6 @@ def countdown(n):
         return
     print(n)
     countdown(n-1)
+    countdown(n-1)
 
-countdown(10)
+countdown(3)
