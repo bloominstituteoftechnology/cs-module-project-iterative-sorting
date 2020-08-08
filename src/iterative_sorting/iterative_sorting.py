@@ -8,17 +8,29 @@ def selection_sort(arr):
         for j in range(cur_index + 1, len(arr)):
             if arr[smallest_index] > arr[j]:
                 smallest_index = j
-
+        # swapping
         arr[cur_index], arr[smallest_index] = arr[smallest_index], arr[cur_index]
+
 
     return arr
 
 
 def bubble_sort(arr):
-
     for i in range(len(arr)-1):
+    # 1st loop through 0 to n - 1 of array (0 to 9)
+    # 2nd loop thru 1 to 9
         for j in range(0, len(arr) - i - 1):
+        #1st outter
+            # 1st inner loop through 0 to (10 - 0 - 1) = 9
+            # 2nd inner loop 1 thru 9
+            # 3rd inner loop 2 thru 9 etc...
+        #2nd outter
+            # 1st inner loop through 1 to (10 - 1 - 1) = 8
+            # 2nd inner loop 2 thru 8 etc...
             if arr[j] > arr[j+1]:
+                # 1st if arr[0] > arr[1] -> swap
+                # 2nd if arr[1] > arr[2] -> swap etc...
+                # swapping
                 arr[j], arr[j+1] = arr[j+1], arr[j]
 
     return arr
@@ -41,10 +53,52 @@ buckets.
 What is the time and space complexity of the counting sort algorithm?
 '''
 def counting_sort(arr, maximum=None):
-    # Your code here
+    # create array for holding counts
+    count_arr = [0 for i in maximum + 1]
+
+    # count elements in the array
+    for i in arr:
+        count_arr
+
+    # assign count to indexes in count_arr
+
 
 
     return arr
+
+"""
+def countSort(arr):
+    # The output character array that will have sorted arr 
+    output = [0 for i in range(256)]
+
+    # Create a count array to store count of inidividul 
+    # characters and initialize count array as 0 
+    count = [0 for i in range(256)]
+
+    # For storing the resulting answer since the  
+    # string is immutable 
+    ans = ["" for _ in arr]
+
+    # Store count of each character 
+    for i in arr:
+        count[ord(i)] += 1
+
+    # Change count[i] so that count[i] now contains actual 
+    # position of this character in output array 
+    for i in range(256):
+        count[i] += count[i - 1]
+
+        # Build the output character array 
+    for i in range(len(arr)):
+        output[count[ord(arr[i])] - 1] = arr[i]
+        count[ord(arr[i])] -= 1
+
+    # Copy the output array to arr, so that arr now 
+    # contains sorted characters 
+    for i in range(len(arr)):
+        ans[i] = output[i]
+    return ans
+"""
 
 # insertion_sort
 my_list = [8, 2, 5, 4, 1, 3]
