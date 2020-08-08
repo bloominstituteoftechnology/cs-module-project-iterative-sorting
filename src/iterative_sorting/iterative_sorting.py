@@ -14,18 +14,30 @@ def selection_sort(arr):
         arr[i], arr[cur_index] = arr[cur_index], arr[i]
 
     return arr
+
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort(arr):
-    # Your code here
+    # Loop through your array
+    for i in range(len(arr)-1):
+        for j in range(0, len(arr)-i-1):
+        # Compare each element to its neighbor
+            # print(arr[j], arr[curr_index])
+            if arr[j] > arr[j + 1]:
+    #     If elements in wrong position (relative to each other, swap them)
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+                # print(arr[i], arr[j], arr[curr_index])
+                # break
+    # If no swaps performed, stop. Else, go back to the element at index 0 and repeat step 1.
 
 
     return arr
 
 arr1 = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7]
-arr2 = []
-arr3 = [0, 1, 2, 3, 4, 5]
+# arr2 = []
+# arr3 = [0, 1, 2, 3, 4, 5]
 
-selection_sort(arr1)
+print(selection_sort(arr1))
+# print(bubble_sort(arr1))
 
 '''
 STRETCH: implement the Counting Sort function below
