@@ -1,4 +1,4 @@
-def linear_search(arr, target):
+def linear_search(arr, target): # O(n)
     # Your code here
     for i in range(len(arr)): 
   
@@ -9,7 +9,7 @@ def linear_search(arr, target):
 
 
 # Write an iterative implementation of Binary Search
-def binary_search(arr, target):
+def binary_search(arr, target): # O(log n)
 
     # Your code here
     low = 0
