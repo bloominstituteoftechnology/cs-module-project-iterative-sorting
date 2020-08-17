@@ -8,9 +8,15 @@ def selection_sort(arr):
         # (hint, can do in 3 loc)
         # Your code here
 
+        while smallest_index < len(arr) - 1:
+            smallest_index += 1
+            if arr[cur_index] > arr[smallest_index]:
 
         # TO-DO: swap
         # Your code here
+                smallest_elemet = arr[smallest_index]
+                arr[smallest_index] = arr[cur_index]
+                arr[cur_index] = smallest_elemet
 
     return arr
 
