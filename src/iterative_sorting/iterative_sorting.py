@@ -25,6 +25,21 @@ def selection_sort(arr):
 def bubble_sort(arr):
     # Your code here
 
+    cur_index = 0
+    swap = False
+    while cur_index < len(arr) - 1:
+        neighbor_index = cur_index + 1
+        if arr[cur_index] > arr[neighbor_index]:
+            neighbor_element = arr[neighbor_index]
+            arr[neighbor_index] = arr[cur_index]
+            arr[cur_index] = neighbor_element
+            swap = True
+        # check to see if no swaps were made
+        if swap:
+            cur_index = 0
+            swap = False
+        else:
+            cur_index += 1
 
     return arr
 
