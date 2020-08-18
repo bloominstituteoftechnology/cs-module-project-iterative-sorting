@@ -23,7 +23,7 @@ def bubble_sort(arr):
     # Traverse through all array elements 
     for i in range(n-1):
         # Last i elements are already in place 
-        for j in range(n-1):
+        for j in range(0, n-i-1):
             # Swap if the element found is greater than the next element 
             if arr[j] > arr[j+1]: 
                 arr[j], arr[j+1] = arr[j+1], arr[j]
@@ -58,7 +58,7 @@ def counting_sort(arr, maximum=None):
             count_negatives += 1
 
     if maximum == None:
-        maximum = np.max(arr)
+        maximum = max(arr)
 
     if count_negatives > 0:
         return "Error, negative numbers not allowed in Count Sort"
@@ -78,6 +78,6 @@ def counting_sort(arr, maximum=None):
                         if buckets[j] != 0:
                             for k in range(i, i + n):
                                 arr[k] = j
-                        i = i + n 
-    
+                        i = i + n
+
     return arr
