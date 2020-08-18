@@ -18,10 +18,7 @@ def bubble_sort(arr):
     # Your code here
     indexing_length = len(arr) - 1
 
-    # local variable
     sorted = False
-
-    # as long as the sorted is false we will do the below actions
     while not sorted:
         sorted = True
         for i in range(0, indexing_length): # comparison
