@@ -11,5 +11,29 @@ def linear_search(arr, target):
 def binary_search(arr, target):
 
     # Your code here
-   
+    initial = 0
+    last = (len(arr) - 1)
+    correct = False
+
+    while initial <= last and not correct:
+        mid = (initial  + last) // 2
+
+        if arr[mid] == target:
+            found = False
+            return mid
+
+        else:
+            if target < arr[mid]:
+                last = mid - 1
+
+            else:
+                first = mid + 1
+                
+    if correct == False:
+       return -1
+
+    else:
+        return mid
+
     return -1  # not found
+x
