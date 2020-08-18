@@ -146,39 +146,50 @@ represents   0  1  2  3
 
     8. Copy the sorted array to the original array
     '''
-    # 1 -- 
-    length = len(arr)
-    output = [0] * length
-    # 2 --
-    counts_length = 0
-    if maximum :
-        counts_length = int(maximum) + 1
-    else:
-        counts_length = 1
-    counts = [0] * (counts_length)
+    
+    counts = {}
+    new_list = []
+    for number in arr:
+        if number not in counts:
+            counts[number] = 0
+        counts[number] += 1
+    
+    for key, count in sorted(counts.items()):
+        for i in range(count):
+            new_list.append(key)
+
+    return new_list 
+
+
+
     # 3 --
-    for index in range(0, length):
-        # 4 --
-        # 4.1
-        value = arr[index]
-        #4.2
-        counts[value] += 1
+    # for index in range(0, length):
+        # # 4 --
+        # # 4.1
+        # value = arr[index]
+        # #4.2
+        # print(value)
+        # print(counts)
+        # print(len(counts))
+        # counts[value] += 1
+
     # 5 --
-    for index, value in enumerate(counts):
-        # 6 --
-        if index > 1:
-            previousIndex = index - 1
-            value += arr[previousIndex]
-        else:
-            value = value
-    # 7.1 --
-    for index, value in enumerate(arr):
-        # 7.2 --
-        value_index = counts[value]
-        # 7.3 --
-        counts[value] -= 1
-        #7.4 --
-        output[counts[value]] = value_index
-    # 8 --
-    for index in range(0, length):
-        arr[index] = output[index]
+    # for index, value in enumerate(counts):
+    #     # 6 --
+    #     if index >= 1:
+    #         previousIndex = index - 1
+    #         value += arr[previousIndex]
+    #     else:
+    #         value = value
+    # # 7.1 --
+    # for index, value in enumerate(arr):
+    #     # 7.2 --
+    #     value_index = counts[value]
+    #     # 7.3 --
+    #     counts[value] -= 1
+    #     #7.4 --
+    #     output[counts[value]] = value_index
+    # # 8 --
+    # for index in range(0, length):
+    #     arr[index] = output[index]
+    # return output
