@@ -57,11 +57,14 @@ def counting_sort(arr, maximum=None):
         if i < 0:
             count_negatives += 1
 
+    if maximum == None:
+        maximum = np.max(arr)
+
     if count_negatives > 0:
         return "Error, negative numbers not allowed in Count Sort"
 
     else:
-        buckets = [0] * (np.max(arr) + 1)
+        buckets = [0] * (maximum + 1)
         for i in range(0, (len(buckets))):
             for j in arr:
                 if i == j:
