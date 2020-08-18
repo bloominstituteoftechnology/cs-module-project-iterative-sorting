@@ -1,18 +1,18 @@
+# python3 src/iterative_sorting/test_iterative.py -v
+
+
 # TO-DO: Complete the selection_sort() function below
 def selection_sort(arr):
-    # loop through n-1 elements
-    for i in range(0, len(arr) - 1):
-        cur_index = i
-        smallest_index = cur_index
-        # TO-DO: find next smallest element
-        # (hint, can do in 3 loc)
+    # Loop through the elements
+    for i in range(len(arr)):
+        current = i
+        smallest = current
+        # Find next smallest element
         for j in range(i+1, len(arr)): 
-            if arr[smallest_index] > arr[j]: 
-                smallest_index = j 
-
-
-        # TO-DO: swap
-        arr[i], arr[smallest_index] = arr[smallest_index], arr[i] 
+            if arr[smallest] > arr[j]: 
+                smallest = j 
+         # Swap elements
+        arr[i], arr[smallest] = arr[smallest], arr[i] 
 
     return arr
 
@@ -23,13 +23,10 @@ def bubble_sort(arr):
     # Traverse through all array elements 
     for i in range(n-1):
         # Last i elements are already in place 
-        for j in range(0, n-i-1):
-            # traverse the array from 0 to n-i-1 
-            # Swap if the element found is greater 
-            # than the next element 
+        for j in range(n-1):
+            # Swap if the element found is greater than the next element 
             if arr[j] > arr[j+1]: 
                 arr[j], arr[j+1] = arr[j+1], arr[j]
-
     return arr
 
 '''
@@ -49,8 +46,35 @@ buckets.
 
 What is the time and space complexity of the counting sort algorithm?
 '''
+import numpy as np
+
 def counting_sort(arr, maximum=None):
-    # Your code here
+    if len(arr) == 0:
+        return arr
+    
+    count_negatives = 0
+    for i in arr:
+        if i < 0:
+            count_negatives += 1
 
+    if count_negatives > 0:
+        return "Error, negative numbers not allowed in Count Sort"
 
+    else:
+        buckets = [0] * (np.max(arr) + 1)
+        for i in range(0, (len(buckets))):
+            for j in arr:
+                if i == j:
+                    buckets[i] += 1
+
+        for i in range(len(arr)):
+            if i < 1:
+                for j in range(len(buckets)):
+                    n = buckets[j]
+                    if i < len(arr):
+                        if buckets[j] != 0:
+                            for k in range(i, i + n):
+                                arr[k] = j
+                        i = i + n 
+    
     return arr

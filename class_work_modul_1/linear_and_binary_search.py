@@ -32,9 +32,7 @@ What's the runtime complexity of a linear search?
 def find_value_binary(arr, value):
     first = 0
     last = (len(arr) - 1)
-
     found = False
-
     while first <= last and not found:
         # find middle using integer divsion
         middle = (first + last) // 2
