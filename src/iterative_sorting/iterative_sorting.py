@@ -1,6 +1,7 @@
 import time
 
 arr = [99, 44, 6, 2, 1, 5, 63, 87, 283, 4, 0]
+arr2 = [99, 44, 6, 2, 1, 5, 63, 87, 283, 4, 0]
 
 # TO-DO: Complete the selection_sort() function below
 
@@ -8,6 +9,8 @@ arr = [99, 44, 6, 2, 1, 5, 63, 87, 283, 4, 0]
 def selection_sort(arr):
     count = 0
     # loop through n-1 elements
+    # (hint, can do in 3 loc)
+
     for i in range(0, len(arr) - 1):
         cur_index = i
         smallest_index = arr[i]
@@ -18,10 +21,11 @@ def selection_sort(arr):
                 # update minimum if current is lower that we had previously
                 smallest_index = arr[j]
                 cur_index = j
-        # (hint, can do in 3 loc)
         # Your code here
 
         # TO-DO: swap
+        if cur_index is not i:
+            arr[cur_index], arr[i] = arr[i], arr[cur_index]
         # Your code here
 
     return arr
@@ -66,13 +70,13 @@ def counting_sort(arr, maximum=None):
     return arr
 
 
-# start = time.time()
-# print("bubble sort", bubble_sort(arr))
-# end = time.time()
-# print(f"Runtime: {end-start}")
+start = time.time()
+print("bubble sort", bubble_sort(arr))
+end = time.time()
+print(f"Runtime: {end-start}")
 
 
-# start = time.time()
-# print("selection sort", selection_sort(arr))
-# end = time.time()
-# print(f"Runtime: {end-start}")
+start = time.time()
+print("selection sort", selection_sort(arr2))
+end = time.time()
+print(f"Runtime: {end-start}")
