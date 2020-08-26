@@ -7,7 +7,6 @@ arr2 = [99, 44, 6, 2, 1, 5, 63, 87, 283, 4, 0]
 
 
 def selection_sort(arr):
-    count = 0
     # loop through n-1 elements
     # (hint, can do in 3 loc)
 
@@ -16,7 +15,6 @@ def selection_sort(arr):
         smallest_index = arr[i]
         # TO-DO: find next smallest element
         for j in range(i+1, len(arr)):
-            count += 1
             if arr[j] < smallest_index:
                 # update minimum if current is lower that we had previously
                 smallest_index = arr[j]
