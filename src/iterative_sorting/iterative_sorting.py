@@ -66,13 +66,13 @@ def counting_sort(arr, maximum=None):
     return arr
 
 
-start = time.time()
-print("bubble sort", bubble_sort(arr))
-end = time.time()
-print(f"Runtime: {end-start}")
+# start = time.time()
+# print("bubble sort", bubble_sort(arr))
+# end = time.time()
+# print(f"Runtime: {end-start}")
 
 
-start = time.time()
-print("selection sort", selection_sort(arr))
-end = time.time()
-print(f"Runtime: {end-start}")
+# start = time.time()
+# print("selection sort", selection_sort(arr))
+# end = time.time()
+# print(f"Runtime: {end-start}")
