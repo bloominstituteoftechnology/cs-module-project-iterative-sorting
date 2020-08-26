@@ -22,6 +22,7 @@ def binary_search(arr, target):
         # * check  if middle val is the same as target, set found to True
         if arr[middle_index] == target:
             found += 1
+            return middle_index
         # * move start or end index closer to one another, and shrink our search space
         else:
             if target < arr[middle_index]:
