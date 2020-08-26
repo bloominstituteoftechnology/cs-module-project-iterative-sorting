@@ -1,0 +1,9 @@
+For binary, without sorting it takes longer to search through
+
+Sorting is never linear.
+
+If you want to do search effectively, do a sorting 
+might take some time the first time, 
+but not the second time. 
+
+
