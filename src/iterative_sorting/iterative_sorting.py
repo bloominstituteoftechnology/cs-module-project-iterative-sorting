@@ -30,9 +30,6 @@ def bubble_sort(arr):
                     # if  current value is grater then next value 
                     # swap the value
                 arr[j+1], arr[j] = arr[j], arr[j+1]
-        
-
-
     return arr
 
 '''
