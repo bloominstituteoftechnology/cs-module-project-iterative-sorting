@@ -65,7 +65,7 @@ def counting_sort(arr, maximum=None):
     # checking to see if there is a empty list
     if not arr:
         return arr
-    # checking to see if the maximum = none
+    # checking to see if the maximum == none
     if not maximum:
         maximum  = arr[0]
         for i in range(len(arr)):
