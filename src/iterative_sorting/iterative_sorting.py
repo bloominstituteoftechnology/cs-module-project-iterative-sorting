@@ -11,7 +11,7 @@ def selection_sort(arr):
 
         # TO-DO: swap
         # Your code here
-
+            
     return arr
 
 
