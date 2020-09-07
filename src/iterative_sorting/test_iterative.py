@@ -3,6 +3,7 @@ import random
 from iterative_sorting import *
 
 class IterativeSortingTest(unittest.TestCase):
+
     def test_selection_sort(self):
         arr1 = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7]
         arr2 = []
