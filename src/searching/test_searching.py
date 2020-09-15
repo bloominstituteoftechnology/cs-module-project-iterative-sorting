@@ -21,6 +21,9 @@ class SearchingTests(unittest.TestCase):
         self.assertEqual(binary_search(arr2, 6), -1)
         self.assertEqual(binary_search(arr2, 0), -1)
 
+'''
+python src/searching/test_searching.py
+'''
 
 if __name__ == '__main__':
     unittest.main()
