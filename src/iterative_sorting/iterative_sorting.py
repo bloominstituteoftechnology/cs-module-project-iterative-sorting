@@ -20,14 +20,24 @@ def selection_sort(arr):
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort(arr):
     # Your code here
-    for i in range(0, len(arr) - 1):
-        lhs = i
-        for j in range(lhs + 1, len(arr)):
-            if arr[lhs] > arr[j]:
-                lhs = j
+    # for i in range(0, len(arr) - 1):
+    #     lhs = i
+    #     for j in range(lhs + 1, len(arr)):
+    #         if arr[lhs] > arr[j]:
+    #             lhs = j
 
-        arr[lhs], arr[i] = arr[i], arr[lhs]
+    #     arr[lhs], arr[i] = arr[i], arr[lhs]
 
+
+    # return arr
+    swap_occured = True
+
+    while swap_occured:
+        swap_occured = False
+        for i in range(len(arr) -1):
+            if arr[i] > arr[i+1]:
+                arr[i], arr[i+1] = arr[i+1], arr[i]
+                swap_occured = True
 
     return arr
 
@@ -50,6 +60,23 @@ What is the time and space complexity of the counting sort algorithm?
 '''
 def counting_sort(arr, maximum=None):
     # Your code here
+    if maximum is None:
+        maximum = max(arr)
 
+    buckets = [0 for i in range(maximum+1)]
 
-    return arr
+    # loop through for arr
+    for value in arr:
+        # for each distinct arr value, increment arr[value] by 1
+        buckets[value] += 1
+
+    # at this point, our buckets array has all of the counts of
+    # every distinct value in our input array
+
+    output = []
+    # loop through our buckets array
+    for index, count in enumerate(buckets):
+        # for the current count
+        output.extend([index for i in range(count)])
+
+    return output
