@@ -38,5 +38,9 @@ class IterativeSortingTest(unittest.TestCase):
     #     self.assertEqual(counting_sort(arr4), sorted(arr4))
 
 
+'''
+python src/interative_sorting/test_iterative.py
+'''
+
 if __name__ == '__main__':
     unittest.main()
