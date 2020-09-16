@@ -1,16 +1,19 @@
 def linear_search(arr, target):
     # Your code here
-    for x in arr:
+    for x in range(0, len(arr)):
         if target == arr[x]:
             print(f"target found in list at index {x}.")
-            return arr[x]
+            return x
 
     return -1   # not found
 
 
 # Write an iterative implementation of Binary Search
 
-def binary_search(arr, target, start, end):
+def binary_search(arr, target, start = None, end = None):
+    if start is None and end is None:
+        start = 0
+        end = len(arr) - 1
     # Your code here
     if start > end:
         return -1
