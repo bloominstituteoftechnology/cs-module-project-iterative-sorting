@@ -20,15 +20,39 @@ def selection_sort(arr):
 
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort(arr):
-    
+    end_of_list = len(arr)
+    current_index = 0
+
     # Compare the first and second item of a collection. If the first item is bigger than the second item, swap the items.
-    # Move to the next item. Now, we will compare the second item with the third item. If the second item is bigger than the third, swap the items.
+    for i in range(len(arr)):
+    # Move to the next item. Now, we will compare the second item with the third item. If the second item is bigger than the third, swap the items.   
+        for compare in range(current_index + 1,end_of_list):
+            print(" ()()()(")
+            print(range(current_index + 1,end_of_list))
+            print(f"C {compare} CI {current_index}")
+            print(f"{arr[current_index]} {arr[compare]}")
+
+            if arr[current_index] < arr[compare]:
+                arr[current_index], arr[compare] = arr[compare], arr[current_index]
+                current_index += 1
+
+            else: 
+                current_index += 1
+            
+
+        end_of_list -= 1
+        current_index = 0
+
     # Do this for every item until the end of the list.
     # Repeat steps 1-3 (decrementing “the end of the list” by 1 each time).
 
 
+    print(arr)
 
     return arr
+
+arrayboii = [12,21,8,14,29]
+bubble_sort(arrayboii)
 
 '''
 STRETCH: implement the Counting Sort function below
