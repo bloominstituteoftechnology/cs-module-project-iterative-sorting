@@ -27,12 +27,10 @@ def bubble_sort(arr):
     for i in range(len(arr)):
     # Move to the next item. Now, we will compare the second item with the third item. If the second item is bigger than the third, swap the items.   
         for compare in range(current_index + 1,end_of_list):
-            print(" ()()()(")
-            print(range(current_index + 1,end_of_list))
-            print(f"C {compare} CI {current_index}")
-            print(f"{arr[current_index]} {arr[compare]}")
+            # print(f"C {compare} CI {current_index}")
+            # print(f"{arr[current_index]} {arr[compare]}")
 
-            if arr[current_index] < arr[compare]:
+            if arr[current_index] > arr[compare]:
                 arr[current_index], arr[compare] = arr[compare], arr[current_index]
                 current_index += 1
 
@@ -51,7 +49,7 @@ def bubble_sort(arr):
 
     return arr
 
-arrayboii = [12,21,8,14,29]
+arrayboii = [12,21,8,14,29, 40, 30, 20, 88]
 bubble_sort(arrayboii)
 
 '''
