@@ -24,7 +24,7 @@ def bubble_sort(arr):
     current_index = 0
 
     # Compare the first and second item of a collection. If the first item is bigger than the second item, swap the items.
-    for i in range(len(arr)):
+    for _ in range(len(arr)):
     # Move to the next item. Now, we will compare the second item with the third item. If the second item is bigger than the third, swap the items.   
         for compare in range(current_index + 1,end_of_list):
             # print(f"C {compare} CI {current_index}")
