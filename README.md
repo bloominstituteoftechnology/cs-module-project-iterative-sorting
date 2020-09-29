@@ -7,6 +7,8 @@
 ## Objectives
 
 - describe the differences between Linear and Binary Search algorithms
+    + Linear searches usually have a set progression for the search, one element leads into the next in a single line.
+    + Binary search algorithms have many different ways to traverse the list and many different ways to search through a list
 - define what runtime complexity is, differentiate between various classifications and categorize the performance of an algorithm using Big O notation
 - distinguish when to use, classify the performance, and implement code to conduct classic iterative sorting algorithms
 
