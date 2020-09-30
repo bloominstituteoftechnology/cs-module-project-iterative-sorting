@@ -7,10 +7,12 @@ def selection_sort(arr):
         # TO-DO: find next smallest element
         # (hint, can do in 3 loc)
         # Your code here
-
-
+        for j in range(cur_index + 1, len(arr)):
+            if arr[j] < arr[smallest_index]:
+                smallest_index = j
         # TO-DO: swap
         # Your code here
+        arr[smallest_index], arr[cur_index] = arr[cur_index], arr[smallest_index]
 
     return arr
 
@@ -35,7 +37,7 @@ Each buckets[i] then is responsible for keeping track of how many times
 we've seen `i` in the input set of data as we iterate through it.
 Once we know exactly how many times each piece of data in the input set
 showed up, we can construct a sorted set of the input data from the 
-buckets. 
+buckets.
 
 What is the time and space complexity of the counting sort algorithm?
 '''
