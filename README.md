@@ -1,4 +1,4 @@
-# Module Project - Iterative Sorting
+### Module Project - Iterative Sorting
 
 ## Algorithms
 
