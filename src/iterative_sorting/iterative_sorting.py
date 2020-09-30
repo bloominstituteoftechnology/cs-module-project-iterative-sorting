@@ -23,8 +23,10 @@ def bubble_sort(arr):
 
     return arr
     
-print(selection_sort([5,2,1,9,0,3,4,6]))
-print(bubble_sort([5,2,1,9,0,3,4,6]))
+a= [5,2,1,9,0,3,4,6]
+
+print(selection_sort(a))
+print(bubble_sort(a))
 '''
 STRETCH: implement the Counting Sort function below
 
@@ -43,7 +45,17 @@ buckets.
 What is the time and space complexity of the counting sort algorithm?
 '''
 def counting_sort(arr, maximum=None):
-    # Your code here
-
-
+    m = maximum + 1
+    count = [0] * m                
+    
+    for a in arr:
+    # count occurences
+        count[a] += 1             
+    i = 0
+    for a in range(m):            
+        for c in range(count[a]):  
+            arr[i] = a
+            i += 1
     return arr
+
+print('Counting sort',counting_sort( a,9 ))

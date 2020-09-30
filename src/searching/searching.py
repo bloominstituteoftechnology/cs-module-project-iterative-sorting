@@ -12,17 +12,17 @@ def binary_search(arr, target):
     middle =0
     while min <= max:
         middle = (min + max) //2
-        # if target == arr[middle]:
-        #     return True
-        if target < arr[middle]:
+        if target == arr[middle]:
+            return middle
+        elif target < arr[middle]:
             max = middle -1
         elif target > arr[middle]:
             min = middle +1
         else:
             return middle
-    return -1                   
+    return -1                 
     # return False  # not found
 arr1 = [2, 7, 3, 9, 5, 1, 0, 4, 6]
-print(linear_search(arr1, 0))
+print('LS, Targeted value Located at index: ',linear_search(arr1, 0))
 
-print(binary_search(arr1, 4))
+print('BS, Targeted value Located at index: ',binary_search(arr1, 7))
