@@ -21,9 +21,22 @@ def selection_sort(arr):
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort(arr):
     # Your code here
-
+    #compare first and second item of arr
+    count = 0
+    while count < (len(arr)-1):
+        # print(f'current array is now {arr}')
+        if arr[count] > arr[count+1]:
+            # print(f'{arr[count]} is bigger than {arr[count+1]} - swaping')
+            #if the first item is bigger than the second, swap items
+            arr[count], arr[count+1] = arr[count+1], arr[count]
+            count = 0
+        else:
+            count +=1
+        #repeat until end of list
 
     return arr
+
+print(bubble_sort([1, 5, 8, 4, 2, 9, 6, 0, 3, 7]))
 
 '''
 STRETCH: implement the Counting Sort function below
