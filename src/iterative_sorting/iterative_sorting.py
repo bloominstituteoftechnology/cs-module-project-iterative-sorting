@@ -18,8 +18,18 @@ def selection_sort(arr):
 
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort(arr):
-    # Your code here
-
+    did_swap = True
+    
+    while did_swap == True:
+        did_swap = False
+        # make a pass, swapping pairs
+        for i in range(len(arr)):
+            # check for end of array
+            if i < len(arr) - 1:
+                # swap if needed
+                if arr[i] > arr[i+1]:
+                    arr[i], arr[i+1] = arr[i+1], arr[i]
+                    did_swap = True
 
     return arr
 
