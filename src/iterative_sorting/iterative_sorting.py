@@ -1,20 +1,55 @@
+import atexit
+from time import time, strftime, localtime
+from datetime import timedelta
+
+def secondsToStr(elapsed=None):
+    if elapsed is None:
+        return strftime("%Y-%m-%d %H:%M:%S", localtime())
+    else:
+        return str(timedelta(seconds=elapsed))
+
+def log(s, elapsed=None):
+    line = "="*40
+    print(line)
+    print(secondsToStr(), '-', s)
+    if elapsed:
+        print("Elapsed time:", elapsed)
+    print(line)
+    print()
+
+def endlog():
+    end = time()
+    elapsed = end-start
+    log("End Program", secondsToStr(elapsed))
+
+start = time()
+log("Start Program")
+
 # TO-DO: Complete the selection_sort() function below
 def selection_sort(arr):
     # loop through n-1 elements
     for i in range(0, len(arr) - 1):
         cur_index = i
-        smallest_index = cur_index
+        smallest_index = cur_index            
         # TO-DO: find next smallest element
         # (hint, can do in 3 loc)
         # Your code here
-
-
+        for j in range(i + 1, len(arr)):
+            if arr[j] < arr[smallest_index]:
+                smallest_index = j
+    
         # TO-DO: swap
         # Your code here
+        
+        arr[i], arr[smallest_index] = arr[smallest_index], arr[i]
 
     return arr
 
-
+# Verifying it works
+random_list_of_numbers = [1, 10, 7, 8, 2, 23, 6]
+selection_sort(random_list_of_numbers)
+print(random_list_of_numbers)
+atexit.register(endlog)
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort(arr):
     # Your code here
