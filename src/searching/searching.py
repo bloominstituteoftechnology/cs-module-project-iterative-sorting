@@ -16,24 +16,24 @@ def binary_search(arr, target):
 
     while first <= last and not found:
         middle = (first + last) // 2
-        print(f"The middle is {middle}")
+        # print(f"The middle is {middle}")
         
         # check to see if item is the middle target
-        print(f"The middle is {arr[middle]} and the target is {target}")
+        # print(f"The middle is {arr[middle]} and the target is {target}")
         if target == arr[middle]:
-            print("found value")
+            # print("found value")
             found = True
             return middle
         # else check to see if the number is smaller or larger and repeat
         else:
-            print("Target not found so going through the else ")
+            # print("Target not found so going through the else ")
             if target < arr[middle]:
                 # if smaller change the last number to be the middle
                 last = middle - 1
-                print("changed last")
+                # print("changed last")
             else:
                 first = middle + 1
-                print("changed first")
+                # print("changed first")
         
     return -1
 
