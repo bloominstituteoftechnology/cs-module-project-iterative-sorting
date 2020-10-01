@@ -7,7 +7,10 @@
 ## Objectives
 
 - describe the differences between Linear and Binary Search algorithms
+    + Linear searches have a set progression for the search, one element leads into the next in a single line. 
+    + Binary search algorithms are quicker because you can cut the area required to search in half each iteration. But the disadvantage is you need sorted data. They are great for large, sorted lists.
 - define what runtime complexity is, differentiate between various classifications and categorize the performance of an algorithm using Big O notation
+    + Runtime complexity is the relative path for how long an algorithm takes to complete it's task. The quickest is O(1) which takes the same amount of time no matter how large the data is. O(logn) is slightly slower, but scales nicely for large data sets. O(n) is linear, so it scales in proportion to how large the data is. O(n logn) takes longer. O(n^2) is quadratic in its time complexity. Each iteration required basically multiplies itself by the number of processes. O(2^n) is exponential and massively increases in time required to process data. And O(n!) is factorial.
 - distinguish when to use, classify the performance, and implement code to conduct classic iterative sorting algorithms
 
 ## Introduction
