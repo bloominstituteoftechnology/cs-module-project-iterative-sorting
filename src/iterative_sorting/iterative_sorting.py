@@ -54,9 +54,40 @@ showed up, we can construct a sorted set of the input data from the
 buckets. 
 
 What is the time and space complexity of the counting sort algorithm?
+ - Stable
+ - Time: O(n+k) where n is num itmes in array and k is range of values
+ - Auxiliary Space: O(n+k) as creating new arrays
 '''
 def counting_sort(arr, maximum=None):
     # Your code here
 
+    #find max
+
+    #create buckets
+    buckets = [0] * (maximum + 1)
+    
+    #Count each and every element in the array and increment its 
+    # value at the corresponding index in the auxiliary array created
+    for item in arr:
+        buckets[item] +=1
+    
+    #Find cumulative sum is the auxiliary array we adding curr and prev frequency
+    pass
+
+    #Now the cumulative value actually signifies the actual location of the element in the sorted input array
+    pass
+
+    #Start iterating auxiliary array from 0 to max
+    pass
+
+    #Put 0 at the corresponding index and reduce the count by 1, which will signify the second position 
+    # of the element if it exists in the input array
+    pass
+
+    # Now transfer array received in the above step in the actual input array
+    pass
 
     return arr
+
+
+counting_sort([1,2,3], 3)
