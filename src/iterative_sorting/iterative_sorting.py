@@ -7,7 +7,10 @@ def selection_sort(arr):
         # TO-DO: find next smallest element
         # (hint, can do in 3 loc)
         # Your code here
-        for j in range((i + 1), len(arr)):
+        for j in range((i + 1), len(arr)): 
+            # why does it have to go all the way to the end. len(arr) - 1 
+            # #wasn't iterating the last element of the array
+
             if arr[j] < arr[smallest_index]:
                 smallest_index = j
 
@@ -25,11 +28,22 @@ def selection_sort(arr):
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort(arr):
     # Your code here
-#     1. Loop through your array
-#     - Compare each element to its neighbor
-#     - If elements in wrong position (relative to each other, swap them)
-# 2. If no swaps performed, stop. Else, go back to the element at index 0 and repeat step 1.
+    swap = True
+    while swap:
+        #will switch to True if a swap is performed
+        swap = False
 
+        # 1. Loop through your array, but not the last element
+        for i in range(0, len(arr) - 1):
+            # Compare each element to its neighbor
+            if arr[i + 1] < arr[i]:
+                # If elements in wrong position (relative to each other, swap them)
+                temp = arr[i]
+                arr[i] = arr[i + 1]
+                arr[i + 1] = temp
+                swap = True
+
+    print(arr)
     return arr
 
 '''
