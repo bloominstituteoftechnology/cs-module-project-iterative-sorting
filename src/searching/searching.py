@@ -21,4 +21,5 @@ def binary_search(arr, target):
         elif target > arr[middle]:
             start = middle
 
+
     return -1  # not found
