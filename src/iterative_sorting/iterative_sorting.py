@@ -1,3 +1,5 @@
+import time
+
 # TO-DO: Complete the selection_sort() function below
 def selection_sort(arr):
     # loop through n-1 elements
@@ -21,8 +23,8 @@ def selection_sort(arr):
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort(arr):
     # Your code here
-    def swap(i, j):
-       arr[i], arr[j] = arr[j], arr[i]
+    # def swap(i, j):
+    #    arr[i], arr[j] = arr[j], arr[i]
 
     n = len(arr)
     swapped = True
@@ -33,11 +35,8 @@ def bubble_sort(arr):
         x = x + 1
         for i in range(1, n - x):
             if arr[i - 1] > arr[i]:
-                swap(i - 1, i)
-                swapped = True 
-
-
-
+                arr[i-1], arr[i] = arr[i], arr[i-1]
+                swapped = True
     return arr
 
 '''
@@ -57,8 +56,11 @@ buckets.
 
 What is the time and space complexity of the counting sort algorithm?
 '''
+
+
 def counting_sort(arr, maximum=None):
     # Your code here
+    start_time=time.time()
     if len(arr) < 2:
         return arr
 
@@ -80,8 +82,11 @@ def counting_sort(arr, maximum=None):
     
     # Time Comp: O(1)
     for cont_index in range(maximum + 1):
-        for _ in range(container[cont_index]):
+        for index in range(container[cont_index]):
             arr[i] = cont_index
             i += 1
-
+    end_time=time.time()
+    print(f"runtime: {end_time - start_time} seconds")
     return arr
+
+
