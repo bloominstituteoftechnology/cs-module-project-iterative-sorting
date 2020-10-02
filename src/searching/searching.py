@@ -12,10 +12,17 @@ def binary_search(arr, target):
 
     first = 0
     last = len(arr) - 1
-    found = False
+    index = -1 # not found (yet)
 
-    while first <= last and not found:
+    while first <= last and index < 0:
         middle = (first + last) // 2
-        
 
-    return -1  # not found
+        if arr[middle] == target:
+            index = middle
+        else:
+            if target < arr[middle]:
+                last = middle - 1
+            else:
+                first = middle + 1
+
+    return index
