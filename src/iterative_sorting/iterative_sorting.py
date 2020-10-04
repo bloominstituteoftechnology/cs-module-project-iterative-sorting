@@ -1,24 +1,41 @@
-# TO-DO: Complete the selection_sort() function below
+# Consider the first element to be sorted and the rest to be unsorted
+# Assume the first element to be the smallest element.
+# Check if the first element is smaller than each of the other elements:
+# If yes, do nothing
+# If no, choose the other smaller element as minimum and repeat step 3
+# After completion of one iteration through the list, swap the smallest element with the first element of the list.
+# Now consider the second element in the list to be the smallest and so on till all the elements in the list are covered.
+# Once an element is added to the sorted portion of the list, it must never be touched and or compared.
+# https://www.pythoncentral.io/selection-sort-implementation-guide/ 
 def selection_sort(arr):
     # loop through n-1 elements
-    for i in range(0, len(arr) - 1):
+    for i in range(0, len(arr) -1):
         cur_index = i
         smallest_index = cur_index
         # TO-DO: find next smallest element
-        # (hint, can do in 3 loc)
-        # Your code here
-
+        for j in range (cur_index+1,len(arr)):
+            if arr[smallest_index]>arr[j]:
+                smallest_index = j
 
         # TO-DO: swap
-        # Your code here
-
+        arr[i],arr[smallest_index] = arr[smallest_index],arr[i]
+        #print (arr)
     return arr
-
 
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort(arr):
-    # Your code here
-
+# For the first iteration, compare all the elements (n). For the subsequent runs, compare (n-1) (n-2) and so on.
+# Compare each element with its right side neighbour.
+# Swap the smallest element to the left.
+# Keep repeating steps 1-3 until the whole list is covered.
+# https://www.pythoncentral.io/bubble-sort-implementation-guide/ 
+    for j in range(len(arr)-1,0,-1):
+        for i in range (j):
+            if arr[i]>arr[i+1]:
+                temp = arr[i]
+                arr[i] = arr[i+1]
+                arr[i+1] = temp 
+        #print (arr)
 
     return arr
 
