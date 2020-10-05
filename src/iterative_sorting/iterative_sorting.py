@@ -8,9 +8,13 @@ def selection_sort(arr):
         # (hint, can do in 3 loc)
         # Your code here
 
-
+        # arr1 = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7]
+        while cur_index > 0 and smallest_index <= cur_index -1:
+            smallest_index = arr[cur_index -1 ]
+            cur_index -=1
         # TO-DO: swap
         # Your code here
+        arr[cur_index] = cur_index 
 
     return arr
 
