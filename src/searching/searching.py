@@ -16,7 +16,6 @@ def binary_search(arr, target):
     end = (len(arr)-1)
     ## CHECKING TO SEE WHAT IS GREATER 
     while start <= end:
-        #$find the middle element then first to make sure the middle is not the target$#
         ## CHECKING TO SEE TARGET IS CORRECT
         middle = (start + end)//2
         if arr[middle]== target:
