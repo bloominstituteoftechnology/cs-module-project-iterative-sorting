@@ -23,18 +23,20 @@ print('Selection Sort', selection_sort([7, 9, 4, 7, 6, 3, 6, 1, 0, 9, 5]))
 
 def bubble_sort(arr):
     # Your code here
-    swapped = 1
-    while swapped > 0:
-        swapped = 1
+
+    for k in range(1, len(arr)):
+        swapped = False
         for i in range(1, len(arr)):
             if arr[i-1] > arr[i]:
                 arr[i-1], arr[i] = arr[i], arr[i-1]  # swap
-                swapped += 1
+                swapped = True
+        if swapped == False:
+            break
 
     return arr
 
 
-print('Bubble Sort', selection_sort([7, 9, 4, 7, 6, 3, 6, 1, 0, 9, 5]))
+print('Bubble Sort', bubble_sort([7, 9, 4, 7, 6, 3, 6, 1, 0, 9, 5]))
 
 
 '''
@@ -58,5 +60,6 @@ What is the time and space complexity of the counting sort algorithm?
 
 def counting_sort(arr, maximum=None):
     # Your code here
+    pass
 
     return arr
