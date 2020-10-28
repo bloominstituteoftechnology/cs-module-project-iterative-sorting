@@ -15,7 +15,7 @@ def selection_sort(arr):
 
     return arr
 
-# array = [1,5,9,4,2,7,0,1,100,99,101]
+array = [1,5,9,4,2,7,0,1,100,99,101]
 # print(f"result is: {selection_sort(array)} ")
 
 
@@ -39,7 +39,7 @@ def bubble_sort(arr):
             break
     return arr
 
-# print(f"result is: {bubble_sort(array)} ")
+print(f"result is: {bubble_sort(array)} ")
 
 
 '''
