@@ -1,26 +1,41 @@
 # TO-DO: Complete the selection_sort() function below
+# TC stands for Time Complexity
+# SC stands for Space Complexity
+
 def selection_sort(arr):
     # loop through n-1 elements
-    for i in range(0, len(arr) - 1):
-        cur_index = i
-        smallest_index = cur_index
+    for i in range(len(arr) - 1): #Range defaults to start at zero if you don't give it an initial position #TC: n
+        cur_index = i   #TC: 1 #SC: 1
+        smallest_index = cur_index  #TC: 1  #SC:
         # TO-DO: find next smallest element
-        # (hint, can do in 3 loc)
-        # Your code here
-
+        # (hint, can do in 3 lines of code)
+        for j in range(cur_index, len(arr)):    # It's only len(arr) and not len(arr) -1 because we need it to compare one thing further? #TC: log n
+            if arr[j] < arr[smallest_index]:    #TC: 1
+                smallest_index = j    #TC: 1    #SC: 1
 
         # TO-DO: swap
-        # Your code here
+        arr[cur_index], arr[smallest_index] = arr[smallest_index], arr[cur_index]   #TC: 1
 
     return arr
 
+# Time Complexity: (n)*(1 + 1 + log n)*(1 + 1) 
+# n * 2 log n * 2
+# 2n*2log n
+# Final TC: O(n log n)
+# Space Complexity: 1 + 1 + 1 
+# Final SC: O(1)
 
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort(arr):
-    # Your code here
-
+    for i in range(len(arr) - 1): #TC: n
+        for j in range(len(arr) - 1 - i): #TC: log n
+            if arr[j] > arr[j+1]:   #TC: 1
+                arr[j], arr[j + 1] = arr[j + 1], arr[j] #TC: 1
 
     return arr
+
+# Final TC: O(n log n)
+# Final SC: O(1) #We don't use up any new space other than the input
 
 '''
 STRETCH: implement the Counting Sort function below
