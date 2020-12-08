@@ -1,4 +1,5 @@
 # Iterative Sorting Algorithms
+- [x] Initial commit
 
 ## Bubble Sort
 
