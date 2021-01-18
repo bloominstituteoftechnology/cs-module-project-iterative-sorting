@@ -1,5 +1,7 @@
 # Part 1: Why is it So Important to Sort Data?
 
+test
+
 ## We're Always Searching
 Users do not have patience for slow apps. And rightfully so! While a a big reason why the applications we use now-a-days are so fast is due to the improvements made in hardware over the last few decades, the software developer still has an important role to play in keeping everything moving quickly.
 
