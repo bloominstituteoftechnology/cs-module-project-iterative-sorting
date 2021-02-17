@@ -35,4 +35,4 @@ def binary_search(arr, target):
     #     else:
     #         right_index = midpoint
 
-    return -1  # not found
+    # return -1  # not found
