@@ -1,3 +1,14 @@
+# Algorithm: A set of instructions for accomplishing a task
+# Lambda uses UPER:
+    # Understand what the problem is asking
+    # Plan what you will do to solve the problem
+    # Execute your plan
+    # Reflect on your solution
+
+# We want our solutions to be as efficient as possible, and that's where space and time complexity comes in
+# Big O notation is a way of describing how fast the runtime grows relative to the input size, and it's a bigger deal when working with huge amounts of input (like at a job)
+# At Lambda, they start testing you on it but making the code signal challenge tests pass in huge inputs and requiring your solution to work in a limited time
+
 # TO-DO: Complete the selection_sort() function below
 # TC stands for Time Complexity
 # SC stands for Space Complexity
@@ -55,7 +66,16 @@ buckets.
 What is the time and space complexity of the counting sort algorithm?
 '''
 def counting_sort(arr, maximum=None):
-    # Your code here
-
-
+    output = [0 for i in range(len(arr))]
+    count = [0 for i in range(maximum)]
+    for i in arr:
+        count[i] += 1
+    for i in range(maximum):
+        output[count[arr[i]]]
     return arr
+
+
+
+
+
+
