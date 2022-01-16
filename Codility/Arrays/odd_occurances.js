@@ -1,3 +1,6 @@
+// indexOf
+// splice
+
 function solution(A){
     // push into an array and remove if it exists 
     maxValue = Math.max(...A)
