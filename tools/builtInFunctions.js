@@ -22,8 +22,6 @@
     fruits.splice(0, 1)
     console.log({fruits})
 
-// split 
-
 // slice
    // returns part of original string
    // .slice(starting, optional: ending)
@@ -61,6 +59,10 @@
     //console.log({nowStr})
 
 // String to array
+// split 
+// splits a string into an array of substrings.
+// returns the new array.
+// does not change the original string
     let eat = 'food eat all day'
     const spreadArr = [...eat]
     console.log({spreadArr})
@@ -99,7 +101,7 @@
         }
     // math ceiling
     let float = 4.35
-    let fixed = float.toFixed(1)
+    let fixed = float.toFixed(1) //makes a string
     console.log({fixed})
     float = Math.ceil(float)
     console.log({float})
