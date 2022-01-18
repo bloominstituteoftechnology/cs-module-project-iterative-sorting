@@ -188,4 +188,9 @@ const solve = (num, tool, num2) => {
   function times(num) {return [num, 'mult']}
   function dividedBy(num) {return [num, 'divide']}
 
+  // compare objects or arrays
+  //  JSON.stringify() then compare
+
+  // objects cannot be defined with a zero value example obj = {quarter : 0} will not define
+
     
