@@ -6,7 +6,8 @@
 
 # For example, consider the following array A consisting of six elements such that:
 
-#   A[0] = 2317 21011
+#   A[0] = 23171 
+#    A[1]=21011
 #   A[2] = 21123
 #   A[3] = 21366
 #   A[4] = 21013
