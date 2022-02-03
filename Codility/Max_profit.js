@@ -10,7 +10,6 @@ const profit = (A) => {
        if(A[i+1] > A[i] && !start){
            start = i
            let sum = (A[i+1] - A[i])
-           console.log({sum})
            add = add + sum
            console.log({add})
            if(add > maxProfit) maxProfit = add
@@ -24,7 +23,6 @@ const profit = (A) => {
                start === i
                add === i
            } else if(start){
-               
             add += A[i+1] - A[i]
            }
        }
