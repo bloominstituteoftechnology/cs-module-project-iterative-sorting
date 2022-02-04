@@ -2,6 +2,7 @@
 // .unshift() :  adds value to 0 element of array, opposite of .push
 // .splice(p2, 0, n[i]) : set an value at a certain index in an array.  the 0 indicates, remove 0 existing values
 // .join('') : from array to string
+// JSON.stringify() to see if objects are equal
 
 // reverse order
 function descendingOrder(n) {
