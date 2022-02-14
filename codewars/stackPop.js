@@ -6,7 +6,6 @@ function validParentheses(parens) {
     let stack = []
     const obj = {'(':')'}
     for(let i=0; i<parensArr.length; i++){
-        console.log({stack}, parensArr[i])
       if(stack.length === 0) {
         stack.push(parensArr[i])
       }else if(obj[stack[stack.length-1]] === parensArr[i]){
@@ -15,9 +14,18 @@ function validParentheses(parens) {
         stack.push(parensArr[i])
       }
     }
-    console.log('final', {stack})
     if(stack.length > 0) return false
     return true;
   }
 
-  console.log(validParentheses("())("))
+
+  //console.log(validParentheses("())("))
+
+  function removeParentheses(parens){
+    while(parens.indexOf('()') != -1){
+        parens = parens.replace('()', '');
+        console.log({parens})
+      }
+      return !parens.length;
+  }
+  console.log(removeParentheses("()())((()))"))
