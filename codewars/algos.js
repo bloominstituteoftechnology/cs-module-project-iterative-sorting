@@ -1,8 +1,39 @@
 // .split() : takes a string and turns it into an array
 // .unshift() :  adds value to 0 element of array, opposite of .push
 // .splice(p2, 0, n[i]) : set an value at a certain index in an array.  the 0 indicates, remove 0 existing values
+// .splice(index, #items to remove, optional:item to insert)
 // .join('') : from array to string
 // JSON.stringify() to see if objects are equal
+// .toString()  - number to string
+// string to number parseInt(), parseFloat(), Number()
+
+// new Set() - unique values, makes an object
+// [...new Set(array)]  makes an array 
+
+interface IPoint {
+  x: number;
+  y: number;
+  validate(): Boolean;
+}
+
+class Point implements IPoint {
+  private x: number;
+  private y: number;
+
+  public constructor (x: number, y: number) {
+      this.x = x;
+      this.y = y;
+  }
+
+  public validate(): number {
+      if (x && y) {
+          return 1;
+      } else {
+          return 0;
+      }
+   }
+}
+ntk-tnyw-cem
 
 // reverse order
 function descendingOrder(n) {
@@ -411,3 +442,8 @@ domainName('http://google.co.jp');
 domainName('www.xakep.ru');
 domainName('https://youtube.com');
 domainName('https://youtube.com/video');
+
+const array1 = [1,2,2,2,3,4,5,5,5]
+const set = new Set(array1)
+const setArr = [...new Set(array1)]
+console.log({set, setArr})
