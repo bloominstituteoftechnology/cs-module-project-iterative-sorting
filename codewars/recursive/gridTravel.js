@@ -1,53 +1,52 @@
-const grid = (x, y, memo = {}) => {
-  if (memo[`${x},${y}`]) {
-    console.log('in ', { memo });
-    return memo[`${x},${y}`];
+const canSum1 = (target, arr, memo = {}) => {
+  if (target === 0) {
+    return true;
   }
-  // base case
-  if (x === 1 && y === 1) return 1;
-  if (x === 0 || y === 0) return 0;
-
-  memo[`${x},${y}`] = grid(x - 1, y, memo) + grid(x, y - 1, memo);
-  console.log({ memo });
-  return memo[`${x},${y}`];
-};
-
-//console.log(grid(18, 18));
-
-const canSum = (num, arr, pt1 = 0, pt2 = 1) => {
-  // return false if checked all combinations
-  // console.log({pt1, pt2})
-  if (pt1 > arr.length - 1) {
-    console.log({ pt1 });
+  if (target < 0) {
     return false;
   }
-  if (arr.includes(num)) return true;
-  // sort arr
-  arr = arr.sort();
-  if (arr[0] > num) return false;
 
-  // sum goes from start to finish
-  let sum = 0;
-  let loop = pt2 - pt1 + 1;
+  if (memo[target]) return memo[target];
 
-  for (let i = pt1; i < loop; i++) {
-    sum = sum + arr[i];
+  for (let i = 0; i < arr.length; i++) {
+    if (canSum1(target - arr[i], arr, memo) === true) {
+      // store in memo
+      memo[target] = true;
+      return true;
+    }
   }
-  console.log({ loop, pt2, pt1, sum });
-  //console.log({sum})
-  if (sum === num){
-    return sum === num
-  }
-
-  // if sum less than num, recursion
-  if (sum < num && pt2 < arr.length) {
-    pt2 += 1;
-    canSum(num, arr, pt1, pt2);
-  } else {
-    pt1 += 1;
-    pt2 = pt1 + 1;
-    canSum(num, arr, pt1, pt2);
-  }
+  console.log({ memo });
+  //store in memo
+  memo[target] = false;
+  return false;
 };
 
-console.log(canSum(7, [2, 4, 3]));
+//console.log(canSum1(7, [2, 4]));
+//console.log(canSum1(302, [7, 14]));
+
+//  find difference from number and target
+// if difference exists return
+// if there is a number less than difference, add together, lower difference
+// if difference or number less than difference exists add, and find new difference, until 0 or -1.
+let found
+const howSum = (target, arr, sum = 0, sumArr = []) => {
+  console.log({ target, arr, sum, sumArr });
+  if(target === 0) found = []
+  if (sum === target) {
+    found = sumArr
+    return sumArr;
+  }
+  if (arr.length === 0) return false;
+   
+  if (sum < target) {
+    for (let i = 0; i < arr.length; i++) {
+      let pushedArr = [...sumArr, arr[i]];
+      let arrSpliced = [...arr];
+      arrSpliced.splice(i, 1);
+      // console.log({arrSpliced})
+    howSum(target, arrSpliced, sum + arr[i], pushedArr)
+    }
+  }
+  return found;
+};
+console.log(howSum(10, [2, 4, 3, 7]));
