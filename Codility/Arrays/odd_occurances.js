@@ -22,3 +22,15 @@ function solution(A){
 }
 arr = [9,3,9,3,9,7,9]
 console.log(solution(arr))
+
+const findOdd = (arr) => {
+    arr = arr.sort()
+    let newArr = [...arr]
+    for(let i=0; i<arr.length - 1; i++){
+        if(arr[i] === arr[i+1]){
+            newArr.splice(i,2)
+        }
+    }
+    return newArr[0]
+}
+console.log(findOdd(arr))

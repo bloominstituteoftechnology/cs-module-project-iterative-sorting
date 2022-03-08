@@ -46,7 +46,7 @@ function primeFactors(n) {
 
 //console.log(primeFactors(7917));
 
-function chooseBestSum(t, k, ls) {
+const chooseBestSum = (t, k, ls) => {
   // not enough cities
   if (ls.length < k) return null;
   ls = ls.sort();
@@ -105,11 +105,40 @@ function chooseBestSum(t, k, ls) {
   return biggest;
 }
 
-var ts = [50, 55, 56, 57, 58];
-console.log(chooseBestSum(163, 3, ts));
-ts = [50];
-console.log(chooseBestSum(163, 3, ts));
-ts = [91, 74, 73, 85, 73, 81, 87];
-console.log(chooseBestSum(230, 3, ts));
-ts= [ 73, 73, 74, 81, 85, 87, 91 ]
+// var ts = [50, 55, 56, 57, 58];
+// console.log(chooseBestSum(163, 3, ts));
+// ts = [50];
+// console.log(chooseBestSum(163, 3, ts));
+// ts = [91, 74, 73, 85, 73, 81, 87];
+// console.log(chooseBestSum(230, 3, ts));
+// ts= [ 73, 73, 74, 81, 85, 87, 91 ]
 
+const bestSumR = (dis, cities, arr, res=0) => {
+  let high = null
+  if(cities === 0  && dis >= 0){
+    return res
+  } 
+
+  if(dis > 0){
+    for(let i=0; i<arr.length; i++){
+      let cArr = [...arr]
+      cArr.splice(i,1)
+      let cCities = cities - 1
+      let cDis = dis - arr[i]
+      let cRes = res + arr[i]
+     if (bestSumR(cDis, cCities, cArr, cRes) > high){
+       high = bestSumR(cDis, cCities, cArr, cRes)
+     }
+    }
+  }
+
+return high
+}
+
+var ts = [50, 55, 56, 57, 58];
+console.log(bestSumR(163, 3, ts));
+ts = [50];
+console.log(bestSumR(163, 3, ts));
+ts = [91, 74, 73, 85, 73, 81, 87];
+console.log(bestSumR(230, 3, ts));
+ts= [ 73, 73, 74, 81, 85, 87, 91 ]
