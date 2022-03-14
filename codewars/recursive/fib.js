@@ -17,4 +17,22 @@ const fib = (n, memo = {}) => {
     
 }
 
-console.log(fib(6))
+//console.log(fib(6))
+
+const fibZero = (n) =>{
+    let arr = new Array(n + 1).fill(0)
+    arr[1] = 1
+   
+    for(let i=0; i<arr.length - 1; i++){
+        if(i < arr.length - 2){
+            arr[i+1] = arr[i+1] + arr[i]
+            arr[i+2] = arr[i+2] + arr[i]
+        } else {
+            arr[i+1] = arr[i+1] + arr[i]
+        }
+    }
+    console.log({arr}, arr.length)
+    return arr[arr.length - 1]
+}
+
+console.log(fibZero(6))
