@@ -35,4 +35,22 @@ const fibZero = (n) =>{
     return arr[arr.length - 1]
 }
 
-console.log(fibZero(6))
+//console.log(fibZero(6))
+
+const gridTravel = (m, n) => {
+    const table = Array(m + 1).fill().map(() => Array(n + 1).fill(0))
+    table [1][2] = 1
+    table [2][1] = 1
+    console.log({table})
+    for(let i=1; i<table.length; i++){
+        for(let k=1; k<table[i].length; k++){
+            if(i === 1 && k >= 3) table [i][k] = table [i-1][k] + table [i][k-1]
+            if(i === 2 && k >= 2) table [i][k] = table [i-1][k] + table [i][k-1]
+            if (i > 2) table [i][k] = table [i-1][k] + table [i][k-1]
+            
+        }
+    }
+    return table [m][n]
+}
+
+console.log(gridTravel(18, 18))
