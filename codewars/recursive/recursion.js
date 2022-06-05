@@ -19,7 +19,9 @@ const findadd = (num) => {
   return findadd(num - 1) + findadd(num - 2);
 };
 
-//console.log(findadd(6));
+console.log('findadd',findadd(6));
+
+
 // 3 +
 // 2 + 1 = 3
 // 5 + 1 = 3
@@ -30,6 +32,19 @@ const findadd = (num) => {
 // river 11 feet.  10 stones to jump.
 // how many ways can the frog cross the river
 // can either jump one or two stones.
+const jump = (ft, count=0, memo={}) => {
+
+if (memo[ft]) return memo[ft]
+ if (ft < 0) return null
+ if (ft === 0) count = count + 1
+ if(ft >= 1){
+  memo[ft] = jump(ft - 1, count) + jump(ft- 2, count)
+  return memo[ft]
+ }
+return count
+}
+console.log('jump', jump(6))
+
 let count = 0;
 const frog = (feet) => {
   if (feet === 0) {
@@ -43,8 +58,27 @@ const frog = (feet) => {
   return count;
 };
 
-//console.log(frog(4));
+console.log(frog(6));
 
+
+const jump2 = (pads) => {
+  if(pads === 0) return 1
+  if(pads < 0) return 0
+
+  return jump2(pads - 1) + jump2(pads - 2)
+}
+console.log('jump 2',jump2(10))
+
+const bS = (target, count, arr=[] ) => {
+  if(target === 0) return arr
+  if(target < 0) return null
+
+  for(let i=0; i<target.length; i++){
+
+  }
+
+}
+console.log(bS(9, [4, 2, 3, 6, 1]))
 const bestSum = (target, nums, arr = []) => {
   if (target === 0) return arr;
   if (target < 0) return null;
@@ -69,10 +103,13 @@ const nest = (target, nums) => {
   if (target === 0) return []; // retuns an empty array, will need to put recursive results in array
   if (target < 0) return null;
   let result = null;
+
   for (let num of nums) {
     let redTar = target - num;
-    let done = bestSum(redTar, nums);
+    // done ? console.log([...done]) : null
+    let done = nest(redTar, nums); // will run until hits a base case, after hits base case will go to next line
     if (done !== null) {
+      console.log(redTar, [...done])
       let final = [...done, num]; // target was reduced by num, need to add num to array
       if (result === null || final.length < result?.length) {
         result = final;
@@ -82,4 +119,7 @@ const nest = (target, nums) => {
   return result;
 };
 
-console.log('nest',nest(9, [4, 2, 3, 6, 1]));
+console.log('nest',nest(9, [4, 2, 3, 6]));
+
+
+

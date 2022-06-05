@@ -3,7 +3,7 @@ function rotate(A, K){
     //make empty array of zeros
     //mv = Math.max(...A)
     //console.log(mv)
-    rotated = new Array(A.length).fill(0)
+    rotated = new Array(A.length).fill(0) // empty arr of zeros
    
     while(K > 0){
         console.log('A top',A)
