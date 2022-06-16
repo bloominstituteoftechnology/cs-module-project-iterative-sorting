@@ -19,8 +19,7 @@ const findadd = (num) => {
   return findadd(num - 1) + findadd(num - 2);
 };
 
-console.log('findadd',findadd(6));
-
+console.log('findadd', findadd(6));
 
 // 3 +
 // 2 + 1 = 3
@@ -32,18 +31,17 @@ console.log('findadd',findadd(6));
 // river 11 feet.  10 stones to jump.
 // how many ways can the frog cross the river
 // can either jump one or two stones.
-const jump = (ft, count=0, memo={}) => {
-
-if (memo[ft]) return memo[ft]
- if (ft < 0) return null
- if (ft === 0) count = count + 1
- if(ft >= 1){
-  memo[ft] = jump(ft - 1, count) + jump(ft- 2, count)
-  return memo[ft]
- }
-return count
-}
-console.log('jump', jump(6))
+const jump = (ft, count = 0, memo = {}) => {
+  if (memo[ft]) return memo[ft];
+  if (ft < 0) return null;
+  if (ft === 0) count = count + 1;
+  if (ft >= 1) {
+    memo[ft] = jump(ft - 1, count) + jump(ft - 2, count);
+    return memo[ft];
+  }
+  return count;
+};
+console.log('jump', jump(6));
 
 let count = 0;
 const frog = (feet) => {
@@ -60,25 +58,21 @@ const frog = (feet) => {
 
 console.log(frog(6));
 
-
 const jump2 = (pads) => {
-  if(pads === 0) return 1
-  if(pads < 0) return 0
+  if (pads === 0) return 1;
+  if (pads < 0) return 0;
 
-  return jump2(pads - 1) + jump2(pads - 2)
-}
-console.log('jump 2',jump2(10))
+  return jump2(pads - 1) + jump2(pads - 2);
+};
+console.log('jump 2', jump2(10));
 
-const bS = (target, count, arr=[] ) => {
-  if(target === 0) return arr
-  if(target < 0) return null
+const bS = (target, count, arr = []) => {
+  if (target === 0) return arr;
+  if (target < 0) return null;
 
-  for(let i=0; i<target.length; i++){
-
-  }
-
-}
-console.log(bS(9, [4, 2, 3, 6, 1]))
+  for (let i = 0; i < target.length; i++) {}
+};
+console.log(bS(9, [4, 2, 3, 6, 1]));
 const bestSum = (target, nums, arr = []) => {
   if (target === 0) return arr;
   if (target < 0) return null;
@@ -97,7 +91,7 @@ const bestSum = (target, nums, arr = []) => {
   }
   return result;
 };
-console.log('bestSum',bestSum(9, [4, 2, 3, 6, 1]));
+console.log('bestSum', bestSum(9, [4, 2, 3, 6, 1]));
 
 const nest = (target, nums) => {
   if (target === 0) return []; // retuns an empty array, will need to put recursive results in array
@@ -109,7 +103,7 @@ const nest = (target, nums) => {
     // done ? console.log([...done]) : null
     let done = nest(redTar, nums); // will run until hits a base case, after hits base case will go to next line
     if (done !== null) {
-      console.log(redTar, [...done])
+      console.log(redTar, [...done]);
       let final = [...done, num]; // target was reduced by num, need to add num to array
       if (result === null || final.length < result?.length) {
         result = final;
@@ -119,7 +113,21 @@ const nest = (target, nums) => {
   return result;
 };
 
-console.log('nest',nest(9, [4, 2, 3, 6]));
+console.log('nest', nest(9, [4, 2, 3, 6]));
 
+// how many ways can hit target
+const waysTarget = (tar, arr, count = 0, ind) => {
+  if (tar === 0 && ind === arr.length - 1) return 1;
+  if (tar != 0 && ind === arr.length - 1) return 0;
 
+  for (let i = 0; i < arr.length; i++) {
+    let addTar = tar + arr[i]
+    let redTar = tar - arr[i]
+    return (
+      waysTarget(addTar, arr, count, i) +
+      waysTarget(redTar, arr, count, i)
+    );
+  }
+};
 
+console.log(waysTarget(3, [1, 1, 1, 1, 1]));

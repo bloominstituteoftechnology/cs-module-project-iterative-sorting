@@ -51,20 +51,48 @@
 // # M is an integer within the range [0..10,000];
 // # each element of array A is an integer within the range [0..M].
 
-function solution(K,M,A){
-    //isolate highest number and see if remaining divided blocks are less than
-    //find index of highest value
-    let maxIndex
-    for(let i=0; i<A.length;i++){
-        if (A[i] === M){
-            maxIndex = i
-        }
-    }
-    if i 
+// function solution(K,M,A){
+//     //isolate highest number and see if remaining divided blocks are less than
+//     //find index of highest value
+//     let maxIndex
+//     for(let i=0; i<A.length;i++){
+//         if (A[i] === M){
+//             maxIndex = i
+//         }
+//     }
+//     if i 
 
+// }
+
+// K = 3
+// M = 6
+// A = [5, 2, 3, 4, 6]
+// console.log(solution(K, M, A))
+
+function binary(N) {
+    // write your code in JavaScript (Node.js 8.9.4)
+    let bin = N.toString(2)
+    // if no zero, less than two ones
+    if(!bin.includes('0')){
+        return 0
+    } 
+    // find indexs of 1
+    let ind = []
+    for(let i=0; i<bin.length; i++){
+        if(bin[i] === '1') ind.push(i)
+    }
+    if(ind.length < 2){
+        return 0 
+    }
+    // find differences 
+    let max = 0
+    for(let i=0; i<ind.length - 1; i++){
+        let dif = ind[i+1] - ind[i]
+        if(dif > max){
+            max = dif
+        } 
+    }
+    return max - 1
 }
 
-K = 3
-M = 6
-A = [5, 2, 3, 4, 6]
-console.log(solution(K, M, A))
+console.log(binary(1041))

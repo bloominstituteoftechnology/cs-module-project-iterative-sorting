@@ -41,11 +41,30 @@ const oddNum = (arr) => {
   arr = arr.sort();
 
   while (arr[0] === arr[1]) {
-    console.log({arr})
-    if(arr.length <= 0) return 0
+    console.log({ arr });
+    if (arr.length <= 0) return 0;
     arr.splice(0, 2);
-    
   }
   return arr[0];
 };
-console.log('49', oddNum(arr));
+//console.log('49', oddNum(arr));
+
+const shiftArr = (A, K) => {
+  if(A.length < 2) return A
+  if(K === 0) return A 
+
+  if(K > A.length){
+    K = K%A.length 
+  }
+  let shifted = [];
+  for (let i = 0; i < A.length; i++) {
+    if (K + (i + 1) <= A.length) {
+      shifted[i + K] = A[i];
+    } else {
+      shifted[(i + K) - A.length] = A[i];
+    }
+  }
+  return shifted
+};
+
+console.log(shiftArr([3, 8, 9, 7, 6], 6))

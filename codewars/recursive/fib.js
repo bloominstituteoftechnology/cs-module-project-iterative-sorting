@@ -1,6 +1,5 @@
 const fib = (n, memo = {}) => {
     if(memo[n]) {
-        console.log(111, n)
         return memo[n]
     }
     // base case
@@ -17,7 +16,7 @@ const fib = (n, memo = {}) => {
     
 }
 
-//console.log(fib(6))
+console.log(fib(6))
 
 const fibZero = (n) =>{
     let arr = new Array(n + 1).fill(0)
@@ -53,4 +52,4 @@ const gridTravel = (m, n) => {
     return table [m][n]
 }
 
-console.log(gridTravel(18, 18))
+//console.log(gridTravel(18, 18))
