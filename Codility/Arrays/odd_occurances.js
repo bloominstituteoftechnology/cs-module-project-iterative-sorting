@@ -1,29 +1,35 @@
 // indexOf
 // splice
-
-function solution(A) {
-  // push into an array and remove if it exists
-  maxValue = Math.max(...A);
-
-  // make array of zeros
-  //count = new Array(maxValue+1).fill(0)
-
-  odd = [];
-  for (x in A) {
-    let num = A[x];
-    if (!odd.includes(num)) {
-      odd.push(A[x]);
+function odd(A) {
+  // 88% codility, too slow
+  // write your code in JavaScript (Node.js 8.9.4)
+  let obj = {};
+  if (A.length === 1) return A[0];
+  for (let i = 0; i < A.length; i++) {
+    if (obj[A[i]]) {
+      obj[A[i]] = obj[A[i]] + 1;
     } else {
-      let index = odd.indexOf(A[x]);
-      if (index > -1) {
-        odd.splice(index, 1);
-      }
+      obj[A[i]] = 1;
     }
   }
-  return odd[0];
+  let entriesArr = Object.entries(obj);
+  for (let item of entriesArr) {
+    if (item[1] % 2 !== 0) return Number(item[0]);
+  }
 }
-arr = [9, 7, 3, 9, 3, 9, 7, 9];
-//console.log(solution(arr));
+
+// indexOf() values must me strings
+
+// console.log(odd([2, 9, 8, 2, 9, 8, 7]));
+
+function odd2(A) { // 100%
+  if (A.length === 1) return Number(A[0]);
+  let sorted = A.sort();
+  for (let i = 0; i < A.length; i += 2) {
+    if (sorted[i] !== sorted[i + 1]) return sorted[i];
+  }
+}
+console.log(odd2([2, 9, 8, 2, 9, 8, 7]));
 
 const findOdd = (arr) => {
   arr = arr.sort();
@@ -49,22 +55,3 @@ const oddNum = (arr) => {
 };
 //console.log('49', oddNum(arr));
 
-const shiftArr = (A, K) => {
-  if(A.length < 2) return A
-  if(K === 0) return A 
-
-  if(K > A.length){
-    K = K%A.length 
-  }
-  let shifted = [];
-  for (let i = 0; i < A.length; i++) {
-    if (K + (i + 1) <= A.length) {
-      shifted[i + K] = A[i];
-    } else {
-      shifted[(i + K) - A.length] = A[i];
-    }
-  }
-  return shifted
-};
-
-console.log(shiftArr([3, 8, 9, 7, 6], 6))
