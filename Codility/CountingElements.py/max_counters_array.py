@@ -110,7 +110,7 @@ def solution(N, A):
             # just record the current maximum value for later write
             max_counter = current_max
             #print('max_counter',max_counter)
-        print('counter',counter, 'current_max', current_max, 'max_counter', max_counter)
+       
     for index in range(0,N):
        
         if counter[index] < max_counter:

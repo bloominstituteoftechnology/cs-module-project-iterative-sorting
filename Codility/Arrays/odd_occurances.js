@@ -22,7 +22,8 @@ function odd(A) {
 
 // console.log(odd([2, 9, 8, 2, 9, 8, 7]));
 
-function odd2(A) { // 100%
+function odd2(A) {
+  // 100%
   if (A.length === 1) return Number(A[0]);
   let sorted = A.sort();
   for (let i = 0; i < A.length; i += 2) {
@@ -55,3 +56,49 @@ const oddNum = (arr) => {
 };
 //console.log('49', oddNum(arr));
 
+function furyRoad(R) {
+  // 100% codility
+  // write your code in JavaScript (Node.js 8.9.4)
+  const sc = { A: 5, S: 40 };
+  const ft = { A: 20, S: 30 };
+
+  if (!R.includes('S')) {
+    return R.length * 5;
+  }
+  if (!R.includes('A')) {
+    return R.length * 30;
+  }
+  let min;
+  let sct = 0;
+  let foot;
+  let startS = false;
+  let pt = 0;
+  while (pt < R.length) {
+    if (startS === false && R[pt] === 'S' && R[pt + 1] === 'S') startS = true;
+    if (startS === false && R[pt] === 'S' && !R[pt + 1]) startS = true;
+
+    if (startS === false) {
+      sct += sc[R[pt]];
+    }
+
+    if (startS === true) {
+      if (!foot) {
+        foot = sct > 0 ? sct : 0;
+        foot += ft[R[pt]];
+      } else {
+        foot += ft[R[pt]];
+      }
+      sct += sc[R[pt]];
+    }
+    if (sct < foot) foot = sct;
+    pt += 1;
+  }
+  if (foot < sct) {
+    min = foot;
+  } else {
+    min = sct;
+  }
+  return min;
+}
+
+console.log(furyRoad('SSA'));
