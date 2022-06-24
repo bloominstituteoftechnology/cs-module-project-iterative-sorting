@@ -1,26 +1,46 @@
 // indexOf
 // splice
-function odd(A) {
-  // 88% codility, too slow
-  // write your code in JavaScript (Node.js 8.9.4)
-  let obj = {};
-  if (A.length === 1) return A[0];
-  for (let i = 0; i < A.length; i++) {
-    if (obj[A[i]]) {
-      obj[A[i]] = obj[A[i]] + 1;
-    } else {
-      obj[A[i]] = 1;
-    }
-  }
-  let entriesArr = Object.entries(obj);
-  for (let item of entriesArr) {
-    if (item[1] % 2 !== 0) return Number(item[0]);
-  }
-}
+// function odd(A) {
+//   // 88% codility, too slow
+//   // write your code in JavaScript (Node.js 8.9.4)
+//   let obj = {};
+//   if (A.length === 1) return A[0];
+//   for (let i = 0; i < A.length; i++) {
+//     if (obj[A[i]]) {
+//       obj[A[i]] = obj[A[i]] + 1;
+//     } else {
+//       obj[A[i]] = 1;
+//     }
+//   }
+//   let entriesArr = Object.entries(obj);
+//   for (let item of entriesArr) {
+//     if (item[1] % 2 !== 0) return Number(item[0]);
+//   }
+// }
 
 // indexOf() values must me strings
 
 // console.log(odd([2, 9, 8, 2, 9, 8, 7]));
+
+function solution(A) {
+  // write your code in JavaScript (Node.js 8.9.4)
+  let obj = {}
+  for(let item of A){
+      if(obj[item]){
+          obj[item] = obj[item] + 1
+      } else {
+          obj[item] = 1
+      }
+  }
+
+  const arr = Object.entries(obj)
+  for(let i=0; i<arr.length; i++){
+      if(arr[i][1] % 2 !== 0){
+        return Number(arr[i][0])
+      } 
+  }
+}
+console.log(solution([2, 9, 8, 2, 9, 8, 7]));
 
 function odd2(A) {
   // 100%
