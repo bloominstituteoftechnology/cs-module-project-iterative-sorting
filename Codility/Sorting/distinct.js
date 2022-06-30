@@ -16,8 +16,10 @@ function threeMult(A) {
   };
   const sorted = A.sort(numSort);
   const top3 = [sorted[0], sorted[1], sorted[2]];
+
   let org = 1;
   let alt = 3;
+  // remove 0
   for (let i = 0; i < top3.length; i++) {
     if (top3[i] === 0) {
       org *= sorted[alt];
@@ -26,10 +28,12 @@ function threeMult(A) {
       org *= top3[i];
     }
   }
-
-  if (org < 0) {
-    return sorted[0] * sorted[alt - 1] * sorted[sorted.length - 1];
+// try 2 negatives 
+  if(sorted[sorted.length - 2] < 0){
+    let topNeg = sorted[sorted.length - 1] * sorted[sorted.length - 2] * sorted[0] 
+    if(topNeg > org) org = topNeg
   }
+
   return org;
 }
 
