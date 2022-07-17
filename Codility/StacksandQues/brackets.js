@@ -44,24 +44,21 @@ function fish(A, B) {
   // write your code in JavaScript (Node.js 8.9.4)
   // A size
   // B direction  0 - upstream, 1 - downstream
-  if (!B.includes(1)){
-   
+  if (!B.includes(1)) {
     return A.length;
-  } 
-  if (!B.includes(0)){
-  
+  }
+  if (!B.includes(0)) {
     return A.length;
-  } 
-  if(A.length === 1) return 1
-  if(A.length === 2){
-    if(B[0] === 0 && B[1] === 1){
-      return 2
-    } 
-    if(B[0] === 1 && B[1] === 0){
-      return 1
-    } 
   }
 
+  if (A.length === 2) {
+    if (B[0] === 0 && B[1] === 1) {
+      return 2;
+    }
+    if (B[0] === 1 && B[1] === 0) {
+      return 1;
+    }
+  }
 
   let up = [];
   let down = [];
@@ -74,28 +71,20 @@ function fish(A, B) {
       while (down.length > 0 && curr) {
         if (curr > down[down.length - 1]) {
           down.pop();
-        } else curr = false;
+        } else {
+          curr = false;
+        }
       }
       if (down.length === 0) {
         up.push(A[i]);
       }
     }
     if (B[i] === 1) {
-      down.push(A[i]);
+      down.push(A[i]); // last position
     }
-    if (B[i] === 1 && i === A.length - 1 && up.length > 0) {
-      let currD = A[i];
-      while (up.length > 0 && currD) {
-        if (currD > up[0]) {
-          up.shift();
-        } else {
-          currD === false;
-        }
-      }
-    }
+    
   }
-  if (up.length > 0) return up.length;
-  if (down.length > 0) return down.length;
+  return up.length + down.length
 }
 
-console.log(fish([2,3], [1,0]))
+console.log(fish([2, 3], [0, 0]));
