@@ -40,6 +40,37 @@ function stack(S) {
   return 0;
 }
 
+function stack2(S) {
+  // write your code in JavaScript (Node.js 8.9.4)
+  if(S.length === 0) return 1
+  if(S.length%2 !== 0) return 0
+  let start = []
+  const end = [')', ']', '}']
+  for(let item of S){
+    console.log({item, start})
+      if(end.includes(item)){
+          if(item === ')' && start[start.length - 1] === '('){
+              start.pop()
+          } else if(item === ']' && start[start.length - 1] === '['){
+              start.pop()
+          } else if(item === '}' && start[start.length - 1] === '{'){
+              start.pop()
+          } else {
+              return 0
+          }
+      } else {
+          start.push(item)
+      }
+  }
+  if(start.length === 0){
+      return 1
+  } else {
+      return 0
+  }
+}
+
+console.log(stack2('()()()'))
+
 function fish(A, B) {
   // write your code in JavaScript (Node.js 8.9.4)
   // A size
