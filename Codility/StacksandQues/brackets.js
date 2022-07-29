@@ -69,7 +69,7 @@ function stack2(S) {
   }
 }
 
-console.log(stack2('()()()'))
+ //console.log(stack2('()()()'))
 
 function fish(A, B) {
   // write your code in JavaScript (Node.js 8.9.4)
@@ -118,4 +118,26 @@ function fish(A, B) {
   return up.length + down.length
 }
 
-console.log(fish([2, 3], [0, 0]));
+//console.log(fish([2, 3], [0, 0]));
+
+function stoneWall(H) {
+  // write your code in JavaScript (Node.js 8.9.4)
+  let stack = []
+  let rec = 0
+  for(let i=0; i<H.length; i++){
+      if(stack.length === 0) stack.push(H[i])
+      if(stack.length > 0 && H[i] < stack[stack.length - 1]){
+          while(stack.length > 0 && H[i] < stack[stack.length -1]){
+              rec += 1
+              stack.pop()
+          }
+          if(!stack.includes(H[i])) stack.push(H[i])
+      }
+      if(stack.length > 0 && H[i] > stack[stack.length - 1] && !stack.includes(H[i])){
+          stack.push(H[i])
+      }
+  }
+  return rec + stack.length
+}
+
+console.log(stoneWall([8, 8, 5, 7, 9, 8, 7, 4, 8]))
